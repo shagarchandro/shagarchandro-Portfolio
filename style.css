@@ -847,3 +847,167 @@ a{
 }
 
 /* project section end */
+
+
+
+ /* contact section start */
+/* ================= CONTACT SECTION ================= */
+
+.contact{
+    padding:100px 9%;
+    background:#1f242d;
+    color:#fff;
+}
+
+.contact-heading{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.contact-heading h2{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.contact-heading h2 i{
+    color:greenyellow;
+    margin-right:8px;
+}
+
+.contact-heading p{
+    max-width:700px;
+    margin:auto;
+    font-size:16px;
+    line-height:28px;
+    color:#cfcfcf;
+}
+
+/* Layout */
+.contact-container{
+    display:flex;
+    gap:40px;
+}
+
+/* Info */
+.contact-info{
+    flex:1;
+}
+
+.info-box{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    background:#111827;
+    padding:18px;
+    margin-bottom:15px;
+    border-radius:12px;
+    border:1px solid rgba(173,255,47,.15);
+}
+
+.info-box i{
+    font-size:26px;
+    color:greenyellow;
+}
+
+.info-box h4{
+    font-size:18px;
+    margin-bottom:4px;
+}
+
+.info-box p{
+    font-size:14px;
+    color:#cfcfcf;
+}
+
+/* Form */
+.contact-form{
+    flex:1;
+    background:#111827;
+    padding:25px;
+    border-radius:15px;
+    border:1px solid rgba(173,255,47,.15);
+}
+
+.input-box{
+    display:flex;
+    gap:15px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:12px;
+    margin-top:15px;
+    border:none;
+    outline:none;
+    border-radius:10px;
+    background:#1f242d;
+    color:#fff;
+    font-size:14px;
+}
+
+.contact-form textarea{
+    height:140px;
+    resize:none;
+}
+
+.contact-form .btn{
+    margin-top:15px;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:8px;
+}
+
+/* ================= TABLET ================= */
+@media(max-width:992px){
+
+    .contact-container{
+        flex-direction:column;
+    }
+
+    .contact{
+        padding:80px 6%;
+    }
+
+    .contact-heading h2{
+        font-size:34px;
+    }
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+
+    .input-box{
+        flex-direction:column;
+    }
+
+    .contact-heading h2{
+        font-size:30px;
+    }
+
+    .contact-heading p{
+        font-size:15px;
+        line-height:26px;
+    }
+}
+
+/* ================= SMALL MOBILE ================= */
+@media(max-width:480px){
+
+    .contact-heading h2{
+        font-size:26px;
+    }
+
+    .info-box{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .info-box i{
+        font-size:22px;
+    }
+}
+
+ /* contact section end  */
