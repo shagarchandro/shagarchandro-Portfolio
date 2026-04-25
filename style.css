@@ -40,72 +40,7 @@ a{
     }
 }
 
-<<<<<<< HEAD
-=======
-/* shagar chandro logo css start */
 
-
-#upperlogo{
-    font-size: 24px;
-    font-weight: 700;
-    color: white;
-    position: relative;
-    transition: 0.3s;
-}
-
-/* glow */
-#upperlogo:hover{
-    color: greenyellow;
-    text-shadow: 0 0 15px rgba(173,255,47,0.7);
-    transform: scale(1.05);
-}
-
-/* underline */
-#upperlogo::after{
-    content:"";
-    position:absolute;
-    left:0;
-    bottom:-6px;
-    width:0%;
-    height:2px;
-    background:greenyellow;
-    transition:0.4s;
-}
-
-#upperlogo:hover::after{
-    width:100%;
-}
-
-
-#upperlogo{
-    font-size: 24px;
-    font-weight: 700;
-    background: linear-gradient(90deg, #a3e635, #22c55e, #00ffcc);
-    background-size: 200%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: move 3s linear infinite;
-}
-
-@keyframes move{
-    0% { background-position: 0%; }
-    100% { background-position: 200%; }
-}
-
-/* shagar chandro logo css end */
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> 5f73709 (update to section)
 .navbar .logo{
     font-size: 25px;
     font-weight: 500;
@@ -140,7 +75,7 @@ a{
     color: rgb(46, 194, 53);
 }
 
-/* ================= HOME ================= */
+/*  Home Section start */
 .home{
     display: flex;
     align-items: center;
@@ -396,12 +331,12 @@ a{
     .navbar .logo{ font-size: 20px; }
 }
 
+    /* home section end  */
+
 
 
 
  /* <!-- About section  start-->  */
- /* ================= ABOUT SECTION ================= */
-/* ================= ABOUT SECTION ================= */
 
 .about{
     display:flex;
@@ -592,8 +527,8 @@ a{
 
 
 
- /* skills start */
- /* ================= SKILLS SECTION ================= */
+ /* skills section start */
+
 
 .skills{
     padding:100px 9%;
@@ -752,7 +687,6 @@ a{
 
 
 
- /* ================= PROJECTS SECTION ================= */
  /* project section start */
 
 .projects{
@@ -917,7 +851,6 @@ a{
 
 
  /* contact section start */
-/* ================= CONTACT SECTION ================= */
 
 .contact{
     padding:100px 9%;
@@ -1076,9 +1009,8 @@ a{
     }
 }
 
-<<<<<<< HEAD
- /* contact section end  */
-=======
+
+
 
 /* required massages  */
 .contact-form{
@@ -1135,6 +1067,7 @@ a{
 
 
  /* contact section end  */
+ 
 
 
  /* FOOTER */

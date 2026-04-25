@@ -20,7 +20,7 @@
     <nav class="navbar">
         <a href="#home" class="logo" id="upperlogo">Shagar Chandro</a>
 
-        <!-- ✅ Menu Toggle -->
+        <!--  Menu Toggle -->
         <div class="menu-toggle">
             <i class='bx bx-menu'></i>
         </div>
@@ -45,7 +45,7 @@
         <div class="bar" style="--i:1"></div>
     </div>
 
-    <!-- HOME -->
+    <!-- Home section start -->
     <section class="home" id="home">
         <div class="home-info">
             <h1>Shagar chandro</h1>
@@ -86,8 +86,10 @@
         </div>
     </section>
 
-      <!-- About section  start--> 
-    
+    <!-- Home section start -->
+
+
+    <!-- About section  start-->   
       
 <section class="about" id="about">
 
@@ -104,7 +106,7 @@
             user-friendly websites using HTML, CSS, JavaScript and React.
         </p>
 
-        <!-- Better Education -->
+        <!--  Education start -->
         <div class="education">
             <h4>Education</h4>
 
@@ -135,7 +137,7 @@
                     <p></p>
                 </div>
             </div>
-
+            <!--  Education end -->
            
         </div>
 
@@ -150,10 +152,7 @@
  <!-- About section  end--> 
 
 
-
-
-
- <!-- ================= SKILLS SECTION ================= -->
+ <!--  skills section start -->
 <section class="skills" id="skills">
 
     <div class="skills-heading">
@@ -225,9 +224,9 @@
 </section>
 <!-- skill section end  -->
 
+
 <!-- project section start -->
 
-<!-- ================= PROJECTS SECTION ================= -->
 <section class="projects" id="projects">
 
     <div class="projects-heading">
@@ -299,13 +298,11 @@
 
 </section>
 
-
-
 <!-- project section end -->
 
 
-<!-- contact section start -->
-<!-- ================= CONTACT SECTION ================= -->
+<!-- Contact section start -->
+
 <section class="contact" id="contact">
 
     <div class="contact-heading">
@@ -318,8 +315,8 @@
 
     <div class="contact-container">
 
-        <!-- Contact Info -->
       <!-- Contact Info -->
+
 <div class="contact-info">
 
     <div class="info-box">
@@ -353,37 +350,35 @@
 </div>
 
         <!-- Contact Form -->
-        <form class="contact-form" id="contactForm">
+      <form class="contact-form" id="contactForm">
 
-    <div class="input-box">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-    </div>
+  <div class="input-box">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+  </div>
 
-    <input type="text" placeholder="Subject" required>
+  <input type="text" name="subject" placeholder="Subject" required>
 
-    <textarea placeholder="Your Message" required></textarea>
+  <textarea name="message" placeholder="Your Message" required></textarea>
 
-    <button type="submit" class="btn">
-        <i class='bx bx-send'></i> Send Message
-    </button>
+  <button type="submit" class="btn">
+    <i class='bx bx-send'></i> Send Message
+  </button>
 
-    <!-- SUCCESS MESSAGE -->
-    <p class="success-msg" id="successMsg">Message sent successfully ✅</p>
+  <p class="success-msg" id="successMsg">Message sent successfully ✅</p>
 
 </form>
+
+        
     </div>
 
 </section>
 
- <!-- contact section end 
+     <!-- contact section end -->
 
 
+     <!-- footer section start  -->
 
-<footer class="footer">
-
-
-<!-- ================= FOOTER ================= -->
 <footer class="footer">
 
     <div class="footer-container">
@@ -431,14 +426,13 @@
 
 </footer>
 
-
-
+     <!-- footer section start  -->
 
 
     <!-- JavaScript -->
     <script>
         const menu = document.querySelector('.menu-toggle');
-        const nav = document.querySelector('.navbar ul');
+        <!-- const nav = document.querySelector('.navbar ul'); -->
 
         menu.onclick = () => {
             nav.classList.toggle('active');
@@ -447,26 +441,44 @@
 
 
 
+    <!-- data entry google sheets strat javascript -->
+
     <script>
-document.getElementById("contactForm").addEventListener("submit", function(e){
-    e.preventDefault(); // page reload বন্ধ
 
-    let msg = document.getElementById("successMsg");
-    msg.style.display = "block";
+const scriptURL = "https://script.google.com/macros/s/AKfycbyqJWYI6owNN2J1Nt3DoaSFomkPm4_QHNUm8PmzEVGaEU-KAYjYh8n6JCqYWlmfBd3d/exec";
 
-    // form reset
-    this.reset();
+const form = document.getElementById("contactForm");
+const successMsg = document.getElementById("successMsg");
 
-    // 3 sec পর message hide
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const formData = new FormData(form);
+
+  fetch(scriptURL, {
+    method: "POST",
+    body: formData
+  })
+  .then(res => res.text())
+  .then(() => {
+    successMsg.style.display = "block";
+    form.reset();
+
     setTimeout(() => {
-        msg.style.display = "none";
+      successMsg.style.display = "none";
     }, 3000);
+  })
+  .catch(err => {
+    console.error(err);
+    alert("Failed ❌");
+  });
 });
+
 </script>
 
 
 
-
+    <!-- data entry google sheets strat javascript -->
 
 
 
@@ -479,6 +491,16 @@ document.getElementById("contactForm").addEventListener("submit", function(e){
             nav.classList.toggle('active');
         };
     </script>
+
+
+
+
+
+
+
+
+
+
 
 </body>
 </html>
