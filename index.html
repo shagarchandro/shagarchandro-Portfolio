@@ -32,6 +32,7 @@
             <li><a href="#skills">skills</a></li>
             <li><a href="#projects">projects</a></li>
             <li><a href="#contact">Contact</a></li>
+            
         </ul>
     </nav>
 
@@ -48,18 +49,17 @@
     <!-- Home section start -->
     <section class="home" id="home">
         <div class="home-info">
-            <h1>Shagar chandro</h1>
+            <h1>Hi, I'm  Shagar chandro</h1>
 
-            <h2>I'm a 
+            <h2> 
                 <span style="--i:4" data-text="Frontend Developer">Frontend Developer</span>
-                <span style="--i:3" data-text="UI/UX Designer">UI/UX Designer</span>
-                <span style="--i:2" data-text="Web Designer">Web Designer</span>
+                <span style="--i:3" data-text="Web Designer">Web Designer</span>
+                <span style="--i:2" data-text="UI/UX Designer">UI/UX Designer</span>
                 <span style="--i:1" data-text="Content Creator">Content Creator</span>
             </h2>
 
             <p>
-                I am a Frontend Developer, creating modern, responsive, 
-                and user-friendly websites using the latest web technologies.
+               As a Frontend Developer, I craft modern, responsive, and intuitively user-friendly websites by harnessing the latest web technologies. My focus is on blending clean design with seamless functionality, ensuring every digital experience feels effortless and engaging.
             </p>
 
             <div class="btn-sci">
@@ -88,7 +88,6 @@
 
     <!-- Home section start -->
 
-
     <!-- About section  start-->   
       
 <section class="about" id="about">
@@ -102,8 +101,7 @@
         <h3>Frontend Developer</h3>
 
         <p>
-            Hello, I'm Shagar Chandro. I build modern, responsive and
-            user-friendly websites using HTML, CSS, JavaScript and React.
+           Hello, I'm Shagar Chandro. I specialize in building modern, responsive, and user-friendly websites using HTML, CSS, JavaScript, and React. My goal is to turn ideas into seamless digital experiences that look great on any device.
         </p>
 
         <!--  Education start -->
@@ -150,7 +148,6 @@
 
 </section>
  <!-- About section  end--> 
-
 
  <!--  skills section start -->
 <section class="skills" id="skills">
@@ -224,7 +221,6 @@
 </section>
 <!-- skill section end  -->
 
-
 <!-- project section start -->
 
 <section class="projects" id="projects">
@@ -247,8 +243,8 @@
                 <p>Modern personal portfolio with responsive design.</p>
 
                 <div class="project-links">
-                    <a href="#"><i class='bx bx-link-external'></i> Live</a>
-                    <a href="#"><i class='bx bxl-github'></i> Code</a>
+                    <a href="https://shagarchandro.github.io/shagarchandro-Portfolio/"><i class='bx bx-link-external'></i> Live</a>
+                    <a href="https://github.com/shagarchandro/shagarchandro-Portfolio"><i class='bx bxl-github'></i> Code</a>
                 </div>
             </div>
         </div>
@@ -288,8 +284,8 @@
                 <p>Simple yet powerful text editor with syntax highlighting.</p>
 
                 <div class="project-links">
-                    <a href="#"><i class='bx bx-link-external'></i> Live</a>
-                    <a href="#"><i class='bx bxl-github'></i> Code</a>
+                    <a href="https://shagarchandro.github.io/textutils-React-js/"><i class='bx bx-link-external'></i> Live</a>
+                    <a href="https://github.com/shagarchandro/textutils-React-js"><i class='bx bxl-github'></i> Code</a>
                 </div>
             </div>
         </div>
@@ -308,8 +304,8 @@
     <div class="contact-heading">
         <h2><i class='bx bx-envelope'></i> Contact Me</h2>
         <p>
-            Feel free to contact me for any project or collaboration.
-            I will reply as soon as possible.
+           I'd love to hear about your ideas! Whether it's a project or collaboration, feel free to contact me. I'll respond as quickly as I can.
+
         </p>
     </div>
 
@@ -385,10 +381,10 @@
 
         <!-- About -->
         <div class="footer-box">
-            <h3>About Me</h3>
+            <a href="" id="footerlogo"><h3>Shagar Chandro</h3></a>
             <p>
-                I am a passionate web developer who builds modern,
-                responsive and user-friendly websites.
+                I'm a passionate web developer.
+                I build modern, responsive, and user-friendly websites that users love to explore.
             </p>
         </div>
 
@@ -432,9 +428,9 @@
     <!-- JavaScript start -->
    
     <!-- data entry google sheets strat javascript -->
-
-    <script>
-
+     
+ <script>
+        
 const scriptURL = "https://script.google.com/macros/s/AKfycbyqJWYI6owNN2J1Nt3DoaSFomkPm4_QHNUm8PmzEVGaEU-KAYjYh8n6JCqYWlmfBd3d/exec";
 
 const form = document.getElementById("contactForm");
@@ -481,6 +477,38 @@ form.addEventListener("submit", function(e) {
 
 
  <!-- JavaScript -->
+
+<script>
+/* ===== SECTION ANIMATION ===== */
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", () => {
+    sections.forEach(sec => {
+        const top = window.scrollY;
+        const offset = sec.offsetTop - 200;
+        const height = sec.offsetHeight;
+
+        if (top >= offset && top < offset + height) {
+            sec.classList.add("show");
+        }
+    });
+});
+
+/* ===== NAVBAR SCROLL EFFECT ===== */
+window.addEventListener("scroll", () => {
+    document.querySelector(".navbar").classList.toggle(
+        "scrolled",
+        window.scrollY > 50
+    );
+});
+</script>
+
+<script>const menu = document.querySelector(".navbar ul");
+const toggle = document.querySelector(".menu-toggle");
+
+toggle.onclick = () => {
+    menu.classList.toggle("active");
+};</script>
 
 </body>
 </html>

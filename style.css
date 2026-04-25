@@ -12,7 +12,62 @@ a{
     text-decoration: none;
 }
 
-/* ================= NAVBAR ================= */
+
+ /* upper logo animation start */
+.logo {
+    font-size: clamp(24px, 3vw, 40px); /* responsive font */
+    font-weight: 800;
+    display: inline-block;
+    cursor: pointer;
+    
+    /* Gradient text */
+    background: linear-gradient(
+        270deg,
+        #22c55e,
+        #4f46e5,
+        #06b6d4,
+        #f97316,
+        #22c55e
+    );
+    background-size: 1000% 1000%;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: gradientMove 6s ease infinite, glow 2s ease-in-out infinite alternate;
+
+    transition: transform 0.3s ease, letter-spacing 0.3s ease;
+}
+
+/* Gradient animation */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Glow effect */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px rgba(34, 197, 94, 0.3),
+                     0 0 10px rgba(79, 70, 229, 0.2);
+    }
+    to {
+        text-shadow: 0 0 18px rgba(34, 197, 94, 0.7),
+                     0 0 28px rgba(79, 70, 229, 0.5);
+    }
+}
+
+/* Hover effect */
+.logo:hover {
+    transform: scale(1.1);
+    letter-spacing: 2px;
+}
+
+ /* upper logo animation end */
+
+/* ================= Navbar Start ================= */
 .navbar{
     position: fixed;
     left: 0;
@@ -22,11 +77,8 @@ a{
     display: flex;
     align-items: center;
     z-index: 100;
-
-
     justify-content: space-between;
     background: #212630;
-    backdrop-filter: blur(10px);
     visibility: hidden;
     opacity: 0;
     animation: show-content 1.5s linear forwards;
@@ -40,29 +92,56 @@ a{
     }
 }
 
-
 .navbar .logo{
     font-size: 25px;
     font-weight: 500;
 }
 
 /* MENU ICON */
-.menu-toggle{
+.menu-toggle {
     display: none;
-    font-size: 28px;
-    cursor: pointer;
+    font-size: 25px;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+     box-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
+
     color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+
+    padding: 5px 5px;
+    border-radius: 12px;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+.menu-toggle:hover {
+    background: greenyellow;
+    color: #000;
+    transform: scale(1.1);
+}
+
+/* Click Effect */
+.menu-toggle:active {
+    transform: scale(0.95);
+}
+
+/* Mobile View e show korbe */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
 }
 
 /* NAV LINKS */
 .navbar ul{
-    position: absolute;
-    top: 70px;
-    right: -100%;
-    width: 100%;
-    background: #111827;
-    flex-direction: column;
-    transition: 0.3s;
+    display: flex;
+    gap: 20px;
+    position: static;
+    
 }
 
 .navbar ul.active {
@@ -178,23 +257,76 @@ a{
 
 .home-info .btn-sci .sci{
     margin-left: 20px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
+/* Icon Style */
 .home-info .btn-sci .sci a{
     display: inline-flex;
-    padding: 8px;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
     border: 2px solid greenyellow;
     border-radius: 50%;
+    
     font-size: 20px;
     color: greenyellow;
-    margin: 0 9px;
-    transition: .5s;
+
+    transition: all 0.35s ease;
+    position: relative;
+    overflow: hidden;
 }
 
+/* Hover effect (smooth premium glow) */
 .home-info .btn-sci .sci a:hover{
     background: greenyellow;
     color: #212630;
-    box-shadow: 0 0 10px greenyellow;
+    box-shadow: 0 0 15px rgba(173, 255, 47, 0.8);
+    transform: translateY(-4px) scale(1.1);
+}
+
+/* Soft ripple glow effect */
+.home-info .btn-sci .sci a::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: greenyellow;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 0.4s ease;
+    z-index: -1;
+}
+
+.home-info .btn-sci .sci a:hover::before{
+    transform: scale(1);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px){
+    .home-info .btn-sci{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .home-info .btn-sci .sci{
+        margin-left: 0;
+        justify-content: center;
+    }
+
+    .home-info .btn-sci .sci a{
+        width: 38px;
+        height: 38px;
+        font-size: 18px;
+    }
 }
 
 /* ================= IMAGE ================= */
@@ -274,7 +406,7 @@ a{
     }
 }
 
-/* ================= RESPONSIVE ================= */
+/* ================= Responsive start ================= */
 
 /* Tablet */
 @media (max-width: 1024px){
@@ -294,33 +426,52 @@ a{
 @media (max-width: 768px){
 
     .menu-toggle{
-        display: block; /* ✅ mobile এ show */
+        display: block;
+        font-size: 28px;
+        cursor: pointer;
+        z-index: 1001;
     }
 
     .navbar{
         padding: 15px 5%;
+        position: relative;
     }
 
+   
+    /* ===== Mobile Menu Drawer  start ===== */
     .navbar ul{
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background: #111827;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 50%;
+        height: 60vh;
+        background: rgba(17, 24, 39, 0.95);
         flex-direction: column;
         align-items: center;
-        display: none;
-        padding: 20px 0;
+        justify-content: center;
+        gap: 25px;
+        display: flex; ;
+        transition: right 0.4s ease-in-out;
+        z-index: 1000;
+        box-shadow: -5px 0 20px rgba(0,0,0,0.3);
     }
 
+    /* Open state */
     .navbar ul.active{
-        display: flex;
+        right: 0;
     }
 
     .navbar ul li{
-        margin: 15px 0;
+        margin: 0;
+        font-size: 20px;
+        transition: transform 0.3s ease;
     }
 
+    .navbar ul li:hover{
+        transform: scale(1.1);
+    }
+
+    /* Home section */
     .home{
         flex-direction: column;
         text-align: center;
@@ -340,11 +491,9 @@ a{
     .home-info p{ font-size: 13px; }
     .navbar .logo{ font-size: 20px; }
 }
+    /* ===== Mobile Menu Drawer  end ===== */
 
     /* home section end  */
-
-
-
 
  /* <!-- About section  start-->  */
 
@@ -431,7 +580,7 @@ a{
     margin-top:25px;
 }
 
-/* ================= RESPONSIVE ================= */
+/* ================= Responsive end ================= */
 
 /* Tablet */
 @media(max-width:992px){
@@ -694,9 +843,6 @@ a{
 }
  /* skills end */
 
-
-
-
  /* project section start */
 
 .projects{
@@ -794,7 +940,7 @@ a{
     color:#111;
 }
 
-/* ================= TABLET ================= */
+/* ================= Tablet ================= */
 @media(max-width:992px){
 
     .projects{
@@ -810,7 +956,7 @@ a{
     }
 }
 
-/* ================= MOBILE ================= */
+/* ================= Mobile ================= */
 @media(max-width:768px){
 
     .projects-container{
@@ -831,7 +977,7 @@ a{
     }
 }
 
-/* ================= SMALL MOBILE ================= */
+/* ================= small mobile ================= */
 @media(max-width:480px){
 
     .projects-heading h2{
@@ -857,8 +1003,6 @@ a{
 }
 
 /* project section end */
-
-
 
  /* contact section start */
 
@@ -969,7 +1113,7 @@ a{
     gap:8px;
 }
 
-/* ================= TABLET ================= */
+/* ================= Tablet ================= */
 @media(max-width:992px){
 
     .contact-container{
@@ -985,7 +1129,7 @@ a{
     }
 }
 
-/* ================= MOBILE ================= */
+/* ================= Mobile ================= */
 @media(max-width:768px){
 
     .input-box{
@@ -1002,7 +1146,7 @@ a{
     }
 }
 
-/* ================= SMALL MOBILE ================= */
+/* ================= small mobile ================= */
 @media(max-width:480px){
 
     .contact-heading h2{
@@ -1018,8 +1162,6 @@ a{
         font-size:22px;
     }
 }
-
-
 
 
 /* required massages  */
@@ -1075,13 +1217,50 @@ a{
     }
 }
 
-
  /* contact section end  */
 
+ /* footer logo animation start */
+ 
+#footerlogo{
+    display: inline-block;
+    font-size: clamp(20px, 2.5vw, 28px);
+    font-weight: 700;
 
+    color: #fff;
+    text-decoration: none;
 
- /* FOOTER */
- /* ================= FOOTER ================= */
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Gradient underline effect */
+#footerlogo::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+
+    width: 0%;
+    height: 2px;
+
+    background: linear-gradient(90deg, greenyellow, #4f46e5);
+    transition: width 0.4s ease;
+}
+
+/* Hover */
+#footerlogo:hover{
+    color: greenyellow;
+    transform: translateY(-2px);
+    text-shadow: 0 0 10px rgba(173, 255, 47, 0.6);
+}
+
+#footerlogo:hover::after{
+    width: 100%;
+}
+    
+    /* footer logo animation end */
+
+ /* ================= footer section start ================= */
 .footer{
     background:#111827;
     color:#fff;
@@ -1151,7 +1330,7 @@ a{
     color:#111827;
 }
 
-/* BOTTOM */
+/* Bottom */
 .footer-bottom{
     text-align:center;
     margin-top:40px;
@@ -1161,14 +1340,14 @@ a{
     color:#9ca3af;
 }
 
-/* ================= TABLET ================= */
+/* ================= Tablet ================= */
 @media(max-width:992px){
     .footer-container{
         grid-template-columns:repeat(2,1fr);
     }
 }
 
-/* ================= MOBILE ================= */
+/* ================= Mobile ================= */
 @media(max-width:600px){
     .footer-container{
         grid-template-columns:1fr;
@@ -1180,3 +1359,43 @@ a{
     }
 }
 
+/* ===== Global ===== */
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    transition: all 0.3s ease;
+
+}
+
+/* ===== Section animation start ===== */
+section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== NAVBAR EFFECT ===== */
+.navbar.scrolled {
+    background: #111827;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+/* ===== BUTTON ===== */
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px greenyellow;
+}
+
+/* ===== IMAGE ===== */
+.img-box img:hover {
+    transform: scale(1.1);
+}
+
+/* ===== Section animation End ===== */
