@@ -56,7 +56,17 @@ a{
 
 /* NAV LINKS */
 .navbar ul{
-    display: flex;
+    position: absolute;
+    top: 70px;
+    right: -100%;
+    width: 100%;
+    background: #111827;
+    flex-direction: column;
+    transition: 0.3s;
+}
+
+.navbar ul.active {
+    right: 0;
 }
 
 .navbar ul li{
@@ -1067,7 +1077,7 @@ a{
 
 
  /* contact section end  */
- 
+
 
 
  /* FOOTER */
