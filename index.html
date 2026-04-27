@@ -348,14 +348,15 @@
         <!-- Contact Form -->
       <form class="contact-form" id="contactForm">
 
-  <div class="input-box">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
+  <div class="input-box" id="fieldbox-anmation">
+    <input type="text" name="name" placeholder="Your Name :" required>
+    <input type="email" name="email" placeholder="Your Email :" required>
+    <input type="tel" name="phone" placeholder="Your Phone number :" pattern="[0-9]{11}" required>
   </div>
 
-  <input type="text" name="subject" placeholder="Subject" required>
+  <input id="fieldbox-anmation" type="text" name="subject" placeholder="Subject" required>
 
-  <textarea name="message" placeholder="Your Message" required></textarea>
+  <textarea id="fieldbox-anmation" name="message" placeholder="Your Message" required></textarea>
 
   <button type="submit" class="btn">
     <i class='bx bx-send'></i> Send Message
@@ -431,7 +432,7 @@
      
  <script>
         
-const scriptURL = "https://script.google.com/macros/s/AKfycbyqJWYI6owNN2J1Nt3DoaSFomkPm4_QHNUm8PmzEVGaEU-KAYjYh8n6JCqYWlmfBd3d/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbyUnxVPYT9NMeAG9mPIQiUjtXEEmveWPNRJy3lX6MFP9A5Sn8m_nXHhwpNHcMBpHDb0/exec";
 
 const form = document.getElementById("contactForm");
 const successMsg = document.getElementById("successMsg");
