@@ -27,8 +27,10 @@
         <a href="#home" class="logo" id="upperlogo">Shagar Chandro</a>
 
         <!--  Menu Toggle -->
-        <div class="menu-toggle">
-            <i class='bx bx-menu'></i>
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
 
         <!-- UL -->
@@ -525,12 +527,11 @@ window.addEventListener("scroll", () => {
 });
 </script>
 
-<script>const menu = document.querySelector(".navbar ul");
-const toggle = document.querySelector(".menu-toggle");
+<script>const toggle = document.getElementById("menuToggle");
 
-toggle.onclick = () => {
-    menu.classList.toggle("active");
-};</script>
+toggle.addEventListener("click", () => {
+    toggle.classList.toggle("active");
+});</script>
 
 </body>
 </html>

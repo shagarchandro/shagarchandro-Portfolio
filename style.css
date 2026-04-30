@@ -14,54 +14,81 @@ a{
 
  /* upper logo animation start */
 .logo {
-    font-size: clamp(24px, 3vw, 40px); /* responsive font */
+    font-size: clamp(24px, 4vw, 40px);
     font-weight: 800;
+    letter-spacing: 0.8px;
     display: inline-block;
     cursor: pointer;
-    
-    /* Gradient text */
-    background: linear-gradient(
-        270deg,
-        #22c55e,
-        #4f46e5,
-        #06b6d4,
-        #f97316,
-        #22c55e
-    );
-    background-size: 1000% 1000%;
+    position: relative;
+
+    /* Clean Gradient */
+    background: linear-gradient(120deg, #22c55e, #4f46e5, #06b6d4);
+    background-size: 300% 300%;
 
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    animation: gradientMove 6s ease infinite, glow 2s ease-in-out infinite alternate;
+    animation: gradientMove 6s ease infinite;
 
-    transition: transform 0.3s ease, letter-spacing 0.3s ease;
+    transition: all 0.35s ease;
 }
 
-/* Gradient animation */
+/* Smooth gradient */
 @keyframes gradientMove {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* Glow effect */
-@keyframes glow {
-    from {
-        text-shadow: 0 0 5px rgba(34, 197, 94, 0.3),
-                     0 0 10px rgba(79, 70, 229, 0.2);
-    }
-    to {
-        text-shadow: 0 0 18px rgba(34, 197, 94, 0.7),
-                     0 0 28px rgba(79, 70, 229, 0.5);
-    }
+/* Subtle underline glow */
+.logo::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 2px;
+    border-radius: 10px;
+
+    background: linear-gradient(90deg, #22c55e, #4f46e5);
+    transition: width 0.4s ease;
 }
 
 /* Hover effect */
 .logo:hover {
-    transform: scale(1.1);
-    letter-spacing: 2px;
+    transform: translateY(-2px) scale(1.05);
+    letter-spacing: 1.5px;
+    filter: brightness(1.2);
+}
+
+.logo:hover::after {
+    width: 100%;
+}
+
+/* Click feel */
+.logo:active {
+    transform: scale(0.96);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .logo {
+        font-size: clamp(20px, 5vw, 30px);
+        letter-spacing: 0.5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 20px;
+        letter-spacing: 0.3px;
+    }
+
+    .logo::after {
+        height: 1.5px;
+    }
 }
 
  /* upper logo animation end */
@@ -96,44 +123,117 @@ a{
     font-weight: 500;
 }
 
-/* MENU ICON */
+/* MENU ICON style start */
 .menu-toggle {
     display: none;
-    font-size: 15px;
     position: fixed;
-    top: 8px;
-    right: 8px;
+    top: clamp(10px, 2vw, 18px);
+    right: clamp(10px, 2vw, 18px);
     z-index: 1000;
-     /* box-shadow: 0 0 10px rgba(0, 247, 255, 0.5); */
 
-    color: #fff;
-    background: rgba(255, 255, 255, 0.1);
+    width: clamp(42px, 5vw, 50px);
+    height: clamp(42px, 5vw, 50px);
 
-    padding: 5px 5px;
-    border-radius: 15px;
+    border-radius: 16px;
     cursor: pointer;
 
-    transition: all 0.3s ease;
+    /* 🔥 Better glass + gradient */
+    background: linear-gradient(
+        135deg,
+        rgba(34,197,94,0.25),
+        rgba(79,70,229,0.25)
+    );
+    /* backdrop-filter: blur(16px); */
+
+    border: 1px solid rgba(255,255,255,0.18);
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+
+    align-items: center;
+    justify-content: center;
+
+    transition: all 0.35s ease;
 }
 
-/* Hover Effect */
-.menu-toggle:hover {
-    background: greenyellow;
-    color: #000;
-    transform: scale(1.1);
+/* glow effect */
+.menu-toggle::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(135deg, #22c55e, #4f46e5);
+    opacity: 0.25;
+    filter: blur(12px);
+    z-index: -1;
 }
 
-/* Click Effect */
-.menu-toggle:active {
-    transform: scale(0.95);
-}
-
-/* Mobile View e show korbe */
-@media (max-width: 768px) {
+/* responsive */
+@media (max-width: 1024px) {
     .menu-toggle {
-        display: block;
+        display: flex !important;
     }
 }
+@media (min-width: 1025px) {
+    .menu-toggle {
+        display: none !important;
+    }
+}
+
+/* hamburger lines */
+.menu-toggle span {
+    position: absolute;
+    width: clamp(20px, 3vw, 26px);
+    height: 2.5px;
+    background: #ffffff;
+    border-radius: 10px;
+
+    transition: all 0.4s ease;
+}
+
+/* spacing */
+.menu-toggle span:nth-child(1) {
+    transform: translateY(-8px);
+}
+.menu-toggle span:nth-child(2) {
+    opacity: 1;
+}
+.menu-toggle span:nth-child(3) {
+    transform: translateY(8px);
+}
+
+/* hover animation */
+.menu-toggle:hover {
+    transform: translateY(-4px) scale(1.08);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+}
+
+/* click press */
+.menu-toggle:active {
+    transform: scale(0.92);
+}
+
+/* active animation (hamburger → X) */
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg);
+}
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+    transform: scale(0);
+}
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+/* active color change */
+.menu-toggle.active {
+    background: linear-gradient(
+        135deg,
+        rgba(239,68,68,0.4),
+        rgba(249,115,22,0.4)
+    );
+}
+
+/* MENU ICON style end */
 
 /* NAV LINKS */
 .navbar ul{
@@ -439,21 +539,112 @@ a{
    
     /* ===== Mobile Menu Drawer  start ===== */
     .navbar ul{
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 50%;
-        height: 60vh;
-        background: rgba(17, 24, 39, 0.95);
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 25px;
-        display: flex; ;
-        transition: right 0.4s ease-in-out;
-        z-index: 1000;
-        box-shadow: -5px 0 20px rgba(0,0,0,0.3);
-    }
+    position: fixed;
+    top: 0;
+    right: -100%;
+
+    /* 🔥 responsive width */
+    width: clamp(240px, 65%, 320px);
+    height: 55vh;
+
+    /*  premium glass gradient */
+    background: linear-gradient(
+        160deg,
+        rgba(17, 24, 39, 0.95),
+        rgba(30, 41, 59, 0.95)
+    );
+    /* backdrop-filter: blur(16px); */
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    display: flex;
+
+    /*  smoother animation */
+    transition: right 0.45s ease, opacity 0.4s ease;
+
+    z-index: 1000;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.4);
+
+    opacity: 0;
+}
+
+/*  open state */
+.navbar ul.active{
+    right: 0;
+    opacity: 1;
+}
+
+/*  menu item animation */
+.navbar ul li{
+    margin: 0;
+    font-size: 20px;
+
+    transform: translateX(40px);
+    opacity: 0;
+
+    transition: all 0.4s ease;
+}
+
+/* stagger effect (one by one) */
+.navbar ul.active li{
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.navbar ul.active li:nth-child(1){ transition-delay: 0.1s; }
+.navbar ul.active li:nth-child(2){ transition-delay: 0.2s; }
+.navbar ul.active li:nth-child(3){ transition-delay: 0.3s; }
+.navbar ul.active li:nth-child(4){ transition-delay: 0.4s; }
+
+/* hover effect */
+.navbar ul li:hover{
+    transform: scale(1.12);
+}
+
+/*  link style */
+.navbar ul li a{
+    color: #e5e7eb;
+    font-weight: 500;
+    text-decoration: none;
+    position: relative;
+}
+
+/* underline animation */
+.navbar ul li a::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg,#22c55e,#4f46e5);
+    transform: translateX(-50%);
+    transition: 0.3s;
+}
+
+.navbar ul li a:hover::after{
+    width: 100%;
+}
+
+.nav-overlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    /* backdrop-filter: blur(6px); */
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.4s;
+    z-index: 999;
+}
+
+.nav-overlay.active{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+    /* ===== Mobile Menu Drawer  end ===== */
 
     /* Open state */
     .navbar ul.active{
@@ -490,7 +681,6 @@ a{
     .home-info p{ font-size: 13px; }
     .navbar .logo{ font-size: 20px; }
 }
-    /* ===== Mobile Menu Drawer  end ===== */
 
  /* Hi, I'm Shagar chandro  animation section end  */
  
@@ -1490,6 +1680,7 @@ a{
     width: 100%;
 }
 
+
 /* quick-links animation start  */
 
 /* contact footer animation start  */
@@ -1614,28 +1805,84 @@ a{
     padding-left:5px;
 }
 
-/* SOCIAL ICONS */
-.social-links{
-    margin-top:15px;
+
+/* SOCIAL ICONS style start */
+.social-links {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
-.social-links a{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    width:35px;
-    height:35px;
-    margin-right:8px;
-    border-radius:50%;
-    border:1px solid greenyellow;
-    color:greenyellow;
-    transition:0.3s;
+/* Social icon style */
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 2px solid greenyellow;
+    color: greenyellow;
+    font-size: 18px;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-.social-links a:hover{
-    background:greenyellow;
-    color:#111827;
+/* Hover animation (Glow + Scale + Rotate) */
+.social-links a:hover {
+    color: #111827;
+    transform: scale(1.15) rotate(8deg);
+    box-shadow: 0 0 15px greenyellow,
+                0 0 30px greenyellow;
 }
+
+/* Background fill animation */
+.social-links a::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    background: greenyellow;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    transition: 0.4s;
+}
+
+.social-links a:hover::before {
+    width: 100%;
+}
+
+/* Click effect */
+.social-links a:active {
+    transform: scale(0.95);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .social-links {
+        justify-content: center;
+    }
+
+    .social-links a {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-links a {
+        width: 34px;
+        height: 34px;
+        font-size: 14px;
+    }
+}
+/* SOCIAL ICONS style end */
+
 
 /* Bottom */
 .footer-bottom{
