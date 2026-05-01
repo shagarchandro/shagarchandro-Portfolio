@@ -118,12 +118,42 @@ a{
     }
 }
 
+
+
+/* NAV LINKS */
+.navbar ul{
+    display: flex;
+    gap: 20px;
+    position: static;
+    
+}
+
+.navbar ul.active {
+    right: 0;
+}
+
+.navbar ul li{
+    list-style: none;
+    margin-left: 30px;
+}
+
+.navbar ul li a{
+    font-size: 18px;
+    font-weight: 500;
+    transition: .5s;
+}
+
+.navbar ul li:hover a,
+.navbar ul li.active a{
+    color: rgb(46, 194, 53);
+}
+
 .navbar .logo{
     font-size: 25px;
     font-weight: 500;
 }
 
-/* MENU ICON style start */
+/* =======================MENU ICON style start============================== */
 .menu-toggle {
     display: none;
     position: fixed;
@@ -232,37 +262,7 @@ a{
         rgba(249,115,22,0.4)
     );
 }
-
-/* MENU ICON style end */
-
-/* NAV LINKS */
-.navbar ul{
-    display: flex;
-    gap: 20px;
-    position: static;
-    
-}
-
-.navbar ul.active {
-    right: 0;
-}
-
-.navbar ul li{
-    list-style: none;
-    margin-left: 30px;
-}
-
-.navbar ul li a{
-    font-size: 18px;
-    font-weight: 500;
-    transition: .5s;
-}
-
-.navbar ul li:hover a,
-.navbar ul li.active a{
-    color: rgb(46, 194, 53);
-}
-
+/* ==============================MENU ICON style end================== */
 
 /*  Home Section start */
 .home{
@@ -1222,7 +1222,7 @@ a{
     position:absolute;
     left:50%;
     bottom:-5px;
-    transform:translateX(-50%);
+    /* transform:translateX(-50%); */
     width:0%;
     height:3px;
     background:greenyellow;
@@ -1332,8 +1332,8 @@ a{
     position:relative;
     display:inline-block;
     transition:.3s;
+    
 }
-
 #my-projects::after{
     content: "";
     position: absolute;
@@ -1593,7 +1593,7 @@ a{
 }
 
 .input-box{
-    display: flex;
+    display: flex;                           
      flex-wrap: wrap;
     gap: 10px;
 }
