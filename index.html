@@ -87,7 +87,7 @@
         <div class="home-img">
             <div class="img-box">
                 <div class="img-item">
-                    <img src="images/home.png" alt="Profile Picture">
+                    <img src="images/home.jpg" alt="Profile Picture">
                 </div>
             </div>
         </div>
@@ -321,7 +321,6 @@
 
 <!-- project section end -->
 
-
 <!-- Contact section start -->
 
 <section class="contact" id="contact">
@@ -499,7 +498,6 @@ form.addEventListener("submit", function(e) {
 </script>
    <!-- mobile menu toggle javascript start -->
 
-
  <!-- JavaScript -->
 
 <script>
@@ -533,5 +531,44 @@ toggle.addEventListener("click", () => {
     toggle.classList.toggle("active");
 });</script>
 
+<!-- EmailJS javascript End -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+  // 🔥 এখানেই বসবে INIT
+  emailjs.init("pm8ue-Y_Uy3x16TP7");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const serviceID = "service_0mrr1z9";
+  const adminTemplate = "template_bgedihr";
+  const userTemplate = "template_tw84x9j";
+
+  // 1️⃣ Admin email
+  const adminMail = emailjs.sendForm(serviceID, adminTemplate, this);
+
+  // 2️⃣ User auto reply email
+  const userMail = emailjs.sendForm(serviceID, userTemplate, this);
+
+  Promise.all([adminMail, userMail])
+    .then(() => {
+      successMsg.innerHTML = "✅ Message sent & auto-reply sent!";
+      successMsg.style.display = "block";
+
+      form.reset();
+
+      setTimeout(() => {
+        successMsg.style.display = "none";
+      }, 3000);
+    })
+    .catch((err) => {
+      console.log("Error:", err);
+      alert("Email failed ❌");
+    });
+});
+</script>
+<!-- EmailJS javascript End -->
+ 
 </body>
 </html>
