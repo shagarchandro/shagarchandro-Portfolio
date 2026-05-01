@@ -118,7 +118,10 @@ a{
     }
 }
 
-
+.navbar .logo{
+    font-size: 25px;
+    font-weight: 500;
+}
 
 /* NAV LINKS */
 .navbar ul{
@@ -148,12 +151,7 @@ a{
     color: rgb(46, 194, 53);
 }
 
-.navbar .logo{
-    font-size: 25px;
-    font-weight: 500;
-}
-
-/* =======================MENU ICON style start============================== */
+/* ===================MENU ICON style start=========================== */
 .menu-toggle {
     display: none;
     position: fixed;
@@ -168,7 +166,7 @@ a{
     cursor: pointer;
 
     /* 🔥 Better glass + gradient */
-    background: linear-gradient(
+    background: linear-gradient( 
         135deg,
         rgba(34,197,94,0.25),
         rgba(79,70,229,0.25)
@@ -262,7 +260,8 @@ a{
         rgba(249,115,22,0.4)
     );
 }
-/* ==============================MENU ICON style end================== */
+
+/* =================MENU ICON style end================== */
 
 /*  Home Section start */
 .home{
@@ -1332,8 +1331,8 @@ a{
     position:relative;
     display:inline-block;
     transition:.3s;
-    
 }
+
 #my-projects::after{
     content: "";
     position: absolute;
