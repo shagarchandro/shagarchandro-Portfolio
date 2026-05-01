@@ -263,7 +263,7 @@ a{
 
 /* =================MENU ICON style end================== */
 
-/*  Home Section start */
+/* ================== Home Section start ================= */
 .home{
     display: flex;
     align-items: center;
@@ -537,7 +537,7 @@ a{
     }
 
    
-    /* ===== Mobile Menu Drawer  start ===== */
+    /* =============== Mobile Menu Drawer  start  ============== */
     .navbar ul{
     position: fixed;
     top: 0;
@@ -644,7 +644,7 @@ a{
     pointer-events: auto;
 }
 
-    /* ===== Mobile Menu Drawer  end ===== */
+    /* ================ Mobile Menu Drawer  end ================= */
 
     /* Open state */
     .navbar ul.active{
@@ -682,7 +682,7 @@ a{
     .navbar .logo{ font-size: 20px; }
 }
 
- /* Hi, I'm Shagar chandro  animation section end  */
+ /*============= Hi, I'm Shagar chandro  animation section start  =========== */
  
 
 #Hi-I-m-Shagar-chandro::after{
@@ -709,7 +709,7 @@ a{
     width: 100%;
 }
 
- /* Hi, I'm Shagar chandro  animation section end  */
+ /*============= Hi, I'm Shagar chandro  animation section end  =========== */
 
 
     /* home section end  */
@@ -977,7 +977,7 @@ a{
     }
 }
 
- /* my about animation section end ================= */
+ /* ===================my about animation section end ================= */
 
  /* <!-- ================= About section  end================= -->  */
 
@@ -1178,12 +1178,12 @@ a{
         font-size:14px;
     }
 }
- /* my skills animation section end  */
+ /* =====================my skills animation section end========================  */
 
 
  /* skills end */
 
- /* project section start */
+ /* ===========================project section start========================= */
 
 /* ================= PROJECTS ================= */
 .projects{
@@ -1419,11 +1419,11 @@ a{
         padding:6px 10px;
     }
 }
- /* my project animation section end  */
+ /* =================my project animation section end==================  */
 
 /* =================project section end ================= */
 
- /* contact section start */
+ /* ==================contact section start ================= */
 
 .contact{
     padding:100px 9%;
@@ -1682,7 +1682,7 @@ a{
     }
 }
 
-/* contact-me animation section start */
+/* ================= contact-me animation section start ================= */
 
 #contact-me::after{
     content: "";
@@ -1708,11 +1708,11 @@ a{
     width: 100%;
 }
 
-/* contact-me animation section end */
+/* ================= contact-me animation section end ================= */
 
- /* contact section end  */
+ /* ===================== contact section end ==================== */
 
- /* footer logo animation start */
+ /*========================= footer logo animation start =================== */
  
 #footerlogo{
     display: inline-block;
@@ -1752,7 +1752,7 @@ a{
 }
     
 
-/* quick-links animation start  */
+/* ============= quick-links animation start ==============  */
 
 #quick-links::after{
     content: "";
@@ -1779,9 +1779,9 @@ a{
 }
 
 
-/* quick-links animation start  */
+/* =============== quick-links animation start ==================  */
 
-/* contact footer animation start  */
+/* =================== contact footer animation start ==================  */
 
 #contact-footer::after{
     content: "";
@@ -1807,9 +1807,9 @@ a{
     width: 100%;
 }
 
-/* contact footer animation end  */
+/* =================== contact footer animation end ==================  */
 
-/* address-anmation start  */
+/* =================== address-anmation start  =================== */
 
 #address-anmation{
     display: flex;
@@ -1852,9 +1852,9 @@ a{
     color: #7CFF00;
 }
 
-/* address-anmation end  */
+/* ============ address-anmation end ==============  */
 
- /* footer logo animation end */
+ /* =================  footer logo animation end ================ */
 
  /* ================= footer section start ================= */
 .footer{
@@ -1904,7 +1904,7 @@ a{
 }
 
 
-/* SOCIAL ICONS style start */
+/* ================== SOCIAL ICONS style start ==================== */
 .social-links {
     margin-top: 15px;
     display: flex;
@@ -1979,7 +1979,7 @@ a{
         font-size: 14px;
     }
 }
-/* SOCIAL ICONS style end */
+/* ================ SOCIAL ICONS style end =================== */
 
 
 /* Bottom */
@@ -2021,7 +2021,7 @@ html {
 
 }
 
-/* ===== Section animation start ===== */
+/* ============ Section animation start =================== */
 section {
     opacity: 0;
     transform: translateY(50px);
@@ -2050,4 +2050,4 @@ section.show {
     transform: scale(1.1);
 }
 
-/* ===== Section animation End ===== */
+/* ================== Section animation End ================ */
