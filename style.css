@@ -2012,6 +2012,7 @@ a{
 }
 
 /* ===== Global ===== */
+/* ============ Section animation start =================== */
 html {
     scroll-behavior: smooth;
 }
@@ -2021,7 +2022,6 @@ html {
 
 }
 
-/* ============ Section animation start =================== */
 section {
     opacity: 0;
     transform: translateY(50px);
