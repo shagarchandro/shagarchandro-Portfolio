@@ -371,12 +371,22 @@
 </div>
 
         <!-- Contact Form -->
-      <form class="contact-form" id="contactForm">
+ <form class="contact-form" id="contactForm">
 
   <div class="input-box" id="fieldbox-anmation">
-    <input type="text" name="name" placeholder="Your Name :" required>
-    <input type="email" name="email" placeholder="Your Email :" required>
-    <input type="tel" name="phone" placeholder="Your Phone number :" pattern="[0-9]{11}" required>
+    <input type="text" name="name" placeholder="Your Name :" required required minlength="3" maxlength="50">
+    <input 
+        type="email" 
+        name="email" 
+        placeholder="Your Email :"
+        required
+        autocomplete="email"
+        inputmode="email"
+        title="Please enter a valid email address (example@gmail.com)"
+        spellcheck="false"
+        inputmode="email"
+        >
+    <input type="tel" name="phone" placeholder="Your Phone number :" pattern="[0-9]{11}" maxlength="11" required>
   </div>
 
   <input id="fieldbox-anmation" type="text" name="subject" placeholder="Subject" required>
