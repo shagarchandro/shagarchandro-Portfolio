@@ -8,7 +8,7 @@ This project showcases my skills, projects, and contact information with smooth 
 ## 🚀 Live Demo
 
 🔗 [View Website](#)
-*(https://shagarchandro.github.io/shagarchandro-Portfolio/#home)*
+*(https://shagarchandro.github.io/shagarchandro-Portfolio/)*
 
 ---
 
