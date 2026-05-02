@@ -847,10 +847,119 @@ a{
     opacity:.9;
 }
 
-/* ================= BUTTON ================= */
+/* ================= CV DOWNLOAD BUTTON Animation start ================= */
 .about-btns{
     margin-top:25px;
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
 }
+
+/* ===== PREMIUM BUTTON ===== */
+.about-btns .btn{
+    position: relative;
+    padding:12px 30px;
+    border-radius:50px;
+    background: linear-gradient(135deg, #02133a, #02133a);
+    color:#fff;
+    border:2px solid rgba(173,255,47,0.4);
+    font-size:15px;
+    font-weight:500;
+    letter-spacing:0.5px;
+    text-decoration:none;
+    overflow:hidden;
+    z-index:1;
+
+    transition: all 0.35s ease;
+}
+
+/* ===== GLOW BORDER EFFECT ===== */
+.about-btns .btn::before{
+    content:"";
+    position:absolute;
+    inset:-2px;
+    border-radius:50px;
+    background: linear-gradient(90deg, transparent, greenyellow, transparent);
+    opacity:0;
+    z-index:-1;
+    transition:0.4s;
+}
+
+.about-btns .btn:hover::before{
+    opacity:1;
+    animation: borderMove 2s linear infinite;
+}
+
+@keyframes borderMove{
+    0%{transform:translateX(-100%);}
+    100%{transform:translateX(100%);}
+}
+
+/* ===== INNER LIGHT EFFECT ===== */
+.about-btns .btn::after{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:100%;
+    height:100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition:0.5s;
+}
+
+.about-btns .btn:hover::after{
+    left:100%;
+}
+
+/* ===== HOVER ===== */
+.about-btns .btn:hover{
+    transform: translateY(-4px) scale(1.05);
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.4),
+        0 0 20px rgba(173,255,47,0.5);
+    color:greenyellow;
+}
+
+/* ===== ACTIVE CLICK ===== */
+.about-btns .btn:active{
+    transform: scale(0.96);
+}
+
+/* ===== ICON ===== */
+.about-btns .btn i{
+    margin-left:6px;
+    transition:0.3s;
+}
+
+.about-btns .btn:hover i{
+    transform: translateX(6px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:768px){
+    .about-btns{
+        justify-content:center;
+    }
+
+    .about-btns .btn{
+        padding:10px 24px;
+        font-size:14px;
+    }
+}
+
+@media (max-width:480px){
+    .about-btns{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .about-btns .btn{
+        width:100%;
+        text-align:center;
+        padding:12px;
+    }
+}
+/* ================= CV DOWNLOAD BUTTON Animation End ================= */
 
 /* ================= TITLE HOVER ================= */
 #my-about{
