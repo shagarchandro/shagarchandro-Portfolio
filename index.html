@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" >
 <head>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
@@ -458,11 +462,21 @@
 
         <!-- Contact -->
         <div class="footer-box">
-            <h3 id="contact-footer">Contact</h3>
-             <a href="mailto:mbs200361@gmail.com">mbs200361@gmail.com (App)</a> |||
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mbs200361@gmail.com">mbs200361@gmail.com (Browser)</a>
-            </a>
-            <p ><a href="tel:+8801305144356">Phone: +880 1305144356</a></p>
+           <h3 id="contact-footer">Contact</h3>
+
+<!-- EMAIL -->
+<a id="emailLink" href="#" class="email-link">
+  <i class="fas fa-envelope"></i>
+  <span>mbs200361@gmail.com</span>
+</a>
+
+<!-- PHONE -->
+<p>
+  <a href="tel:+8801305144356" class="phone-link">
+    <i class="fas fa-phone"></i>
+    <span>Phone: +880 1305144356</span>
+  </a>
+</p>
 
             <div class="social-links">
 
@@ -508,7 +522,7 @@
    
     <!-- ================== Data entry google sheets strat javascript ======================= -->
      
- <script>
+<script>
         
 const scriptURL = "https://script.google.com/macros/s/AKfycbyUnxVPYT9NMeAG9mPIQiUjtXEEmveWPNRJy3lX6MFP9A5Sn8m_nXHhwpNHcMBpHDb0/exec";
 
@@ -625,8 +639,29 @@ form.addEventListener("submit", function (e) {
 </script>
 <!-- ================= EmailJS javascript End ================= -->
 
- <!-- ================== JavaScript end ================== -->
 
+
+<!-- Footeer Email and contact link up auto eamil responsive start -->
+<script>
+  const email = "mbs200361@gmail.com";
+  const link = document.getElementById("emailLink");
+
+  // Mobile check
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+  if (isMobile) {
+    // Mobile → Email App
+    link.href = `mailto:${email}`;
+  } else {
+    // PC → Gmail Browser
+    link.href = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}`;
+    link.target = "_blank";
+  }
+</script>
+
+<!-- Footeer Email and contact link up auto eamil responsive end -->
+
+ <!-- ================== JavaScript end ================== -->
  
 </body>
 </html>

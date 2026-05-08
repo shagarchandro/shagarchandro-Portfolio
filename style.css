@@ -2160,3 +2160,37 @@ section.show {
 }
 
 /* ================== Section animation End ================ */
+
+
+
+
+.email-link,
+.phone-link{
+    display: flex ;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+    color:#fff;
+    font-size:18px;
+    margin-top:10px;
+}
+
+.email-link i,
+.phone-link i{
+    width:30px;
+    height:30px;
+    border:2px solid #a6ff00;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#a6ff00;
+    transition:0.3s;
+}
+
+.email-link:hover i,
+.phone-link:hover i{
+    background:#a6ff00;
+    color:#081b29;
+    box-shadow:0 0 15px #a6ff00;
+}
