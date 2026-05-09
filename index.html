@@ -466,7 +466,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
            <h3 id="contact-footer">Contact</h3>
 
 <!-- EMAIL -->
-<a id="emailLink" href="#" class="email-link">
+<a id="emailLinks" href="#" class="email-link">
   <i class="fas fa-envelope"></i>
   <span>mbs200361@gmail.com</span>
 </a>
@@ -643,21 +643,36 @@ form.addEventListener("submit", function (e) {
 
 
 <!-- Footeer Email and contact link up auto eamil responsive start -->
+<!-- EMAIL 1 -->
 <script>
-  const email = "mbs200361@gmail.com";
-  const link = document.getElementById("emailLink");
+document.addEventListener("DOMContentLoaded", function () {
 
-  // Mobile check
-  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const email = "mbs200361@gmail.com";
 
-  if (isMobile) {
-    // Mobile → Email App
-    link.href = `mailto:${email}`;
-  } else {
-    // PC → Gmail Browser
-    link.href = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}`;
-    link.target = "_blank";
-  }
+    // দুইটা link select করবে
+    const email1 = document.getElementById("emailLinks");
+    const email2 = document.getElementById("emailLink");
+
+    // Mobile check
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    // function
+    function setupLink(link){
+
+        if(isMobile){
+            link.href = `mailto:${email}`;
+        }else{
+            link.href = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}`;
+            link.target = "_blank";
+        }
+
+    }
+
+    // দুইটাতেই apply
+    setupLink(email1);
+    setupLink(email2);
+
+});
 </script>
 
 <!-- Footeer Email and contact link up auto eamil responsive end -->
