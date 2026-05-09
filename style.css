@@ -2163,7 +2163,7 @@ section.show {
 
 
 
-
+/* Email auto link add css start */
 .email-link,
 .phone-link{
     display: flex ;
@@ -2194,3 +2194,8 @@ section.show {
     color:#081b29;
     box-shadow:0 0 15px #a6ff00;
 }
+/* email auto link add css end */
+
+
+
+
