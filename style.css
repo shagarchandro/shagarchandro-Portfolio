@@ -1767,12 +1767,12 @@ a{
     height: 150px;
     resize: none;
 }
-
-.btn{
-    background: greenyellow;
-    border: none;
-    padding: 12px 20px;
-    cursor: pointer;
+   /* contact Submit button start */
+   .btn{
+       background: greenyellow;
+       border: none;
+       padding: 12px 20px;
+       cursor: pointer;
     font-weight: 600;
     border-radius: 8px;
 }
@@ -1790,6 +1790,7 @@ a{
         flex-direction: column;
     }
 }
+/* contact Submit button End */
 
 /* ================= contact-me animation section start ================= */
 
@@ -2195,4 +2196,10 @@ section.show {
     box-shadow:0 0 15px #a6ff00;
 }
 /* email auto link add css end */
+
+
+
+
+
+
 

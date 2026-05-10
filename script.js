@@ -145,3 +145,37 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // <!-- Footeer Email and contact link up auto eamil responsive end -->
+
+
+
+
+
+/* ================= DOWNLOAD button dawonloding ANIMATION Start ================= */
+
+const downloadBtn = document.getElementById("downloadBtn");
+
+downloadBtn.addEventListener("click", () => {
+
+    downloadBtn.classList.add("downloading");
+
+    const text = downloadBtn.querySelector(".btn-text");
+
+    text.innerText = "Preparing CV...";
+
+    setTimeout(() => {
+        text.innerText = "Downloading...";
+    }, 1000);
+    
+    setTimeout(() => {
+        text.innerText = "Completed ✓";
+    }, 3000);
+
+    setTimeout(() => {
+        downloadBtn.classList.remove("downloading");
+        text.innerText = "Download CV";
+      }, 5000);
+      
+    });
+    /* ================= DOWNLOAD button dawonloding ANIMATION ENd ================= */
+
+    
