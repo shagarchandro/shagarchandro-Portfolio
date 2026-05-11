@@ -178,15 +178,8 @@ downloadBtn.addEventListener("click", () => {
     });
     /* ================= DOWNLOAD button dawonloding ANIMATION ENd ================= */
 
-/* about picture  gellary java script start   */
+/* ============= about picture-gellary java script start ==================  */
     
-
-
-
-
-
-
-
 const images = document.querySelectorAll(".gallery-img");
 const dots = document.querySelectorAll(".dot");
 
@@ -266,4 +259,7 @@ setInterval(()=>{
     showImage(index);
 
 },4000);
+
+/* ============= about picture-gellary java script End ==================  */
+
 

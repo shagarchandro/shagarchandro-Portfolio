@@ -740,10 +740,6 @@ a{
 /* ================= IMAGE ================= */
 /* ==================== about picture  gellary css start ========================  */
 
-/* ==================================================
-   FULL RESPONSIVE PREMIUM GALLERY
-================================================== */
-
 .about-gallery{
     position: relative;
     width: 100%;
@@ -1200,7 +1196,7 @@ a{
 
 }
 
-/* ======================== about picture  gellary css start ===========================   */
+/* ======================== about picture  gellary css End ===========================   */
 /* ================= CONTENT ================= */
 .about-content{
     flex:1;
@@ -1242,60 +1238,263 @@ a{
 }
 
 /* ================= EDUCATION ================= */
+/* =========================
+   /* EDUCATION SECTION css start */
+
+.education{
+    width:100%;
+    padding:30px 0;
+}
+
+/* heading */
 .education h4{
-    font-size:26px;
-    margin-bottom:25px;
+    font-size:clamp(1.6rem,4vw,2.3rem);
+    margin-bottom:35px;
+    color:#fff;
+    position:relative;
+    display:inline-block;
+    letter-spacing:.5px;
 }
 
-/* card animation */
+/* animated underline */
+.education h4::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-10px;
+
+    width:50%;
+    height:3px;
+
+    background:linear-gradient(90deg,#a6ff00,#00ffd5,#ff4ecd);
+
+    border-radius:50px;
+
+    animation:lineFlow 2.5s infinite ease-in-out;
+}
+
+/* =========================
+   CARD DESIGN (PREMIUM GLASS)
+========================= */
+
 .edu-item{
+    position:relative;
+
     display:flex;
-    gap:20px;
-    background:#1f242d;
-    padding:18px;
-    border-radius:14px;
-    margin-bottom:18px;
-    border-left:4px solid greenyellow;
+    gap:22px;
+    align-items:flex-start;
 
-    transition:.4s;
+    width:100%;
+
+    padding:24px;
+
+    border-radius:20px;
+
+    background:rgba(31,36,45,.75);
+    backdrop-filter:blur(14px);
+
+    border:1px solid rgba(255,255,255,.08);
+    border-left:5px solid #a6ff00;
+
+    overflow:hidden;
+
+    transition:.5s ease;
+
     opacity:0;
-    transform: translateY(40px);
-    animation: fadeUp 0.8s ease forwards;
-    animation-delay: calc(0.2s * var(--i));
+    transform:translateY(60px);
+
+    animation:fadeUp .9s ease forwards;
+    animation-delay:calc(.2s * var(--i));
 }
 
+/* glow background */
+.edu-item::before{
+    content:'';
+    position:absolute;
+
+    width:240px;
+    height:240px;
+
+    background:rgba(166,255,0,.07);
+
+    border-radius:50%;
+
+    top:-120px;
+    right:-120px;
+
+    transition:.5s;
+}
+
+/* hover */
 .edu-item:hover{
-    transform:translateY(-6px) scale(1.01);
-    box-shadow:0 0 20px rgba(173,255,47,.3);
+    transform:translateY(-10px) scale(1.02);
+
+    box-shadow:
+        0 0 25px rgba(166,255,0,.18),
+        0 0 60px rgba(0,255,213,.08);
+
+    border-color:rgba(166,255,0,.35);
 }
 
-/* year style */
+.edu-item:hover::before{
+    transform:scale(1.25);
+}
+
+/* =========================
+   YEAR BADGE
+========================= */
+
 .edu-year{
-    min-width:120px;
-    font-size:14px;
-    font-weight:600;
-    color:greenyellow;
-}
+    min-width:130px;
 
-/* info */
-.edu-info h5{
-    font-size:18px;
-    margin-bottom:6px;
-}
+    text-align:center;
 
-.edu-info p{
-    font-size:14px;
-    margin:0;
-    color:#aaa;
-}
-
-.edu-info span{
-    display:block;
-    margin-top:6px;
     font-size:13px;
-    color:greenyellow;
-    opacity:.9;
+    font-weight:700;
+
+    color:#a6ff00;
+
+    padding:10px 14px;
+
+    border-radius:30px;
+
+    background:rgba(166,255,0,.08);
+
+    border:1px solid rgba(166,255,0,.25);
+
+    animation:pulseGlow 2.5s infinite;
 }
+
+/* =========================
+   INFO
+========================= */
+
+.edu-info{
+    flex:1;
+}
+
+/* title */
+.edu-info h5{
+    font-size:clamp(1rem,3vw,1.3rem);
+    color:#fff;
+    margin-bottom:8px;
+    line-height:1.5;
+}
+
+/* institute */
+.edu-info p{
+    font-size:clamp(.85rem,2vw,.95rem);
+    margin:0;
+    color:#bdbdbd;
+    line-height:1.7;
+}
+
+/* location */
+.edu-info span{
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    margin-top:10px;
+
+    font-size:clamp(.8rem,2vw,.9rem);
+    color:#a6ff00;
+
+    opacity:.95;
+}
+
+/* location icon animation */
+.edu-info span::before{
+    content:'📍';
+    animation:bounce 1.5s infinite;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(60px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes pulseGlow{
+    0%{box-shadow:0 0 0 rgba(166,255,0,0);}
+    50%{box-shadow:0 0 15px rgba(166,255,0,.25);}
+    100%{box-shadow:0 0 0 rgba(166,255,0,0);}
+}
+
+@keyframes lineFlow{
+    0%{width:35%;}
+    50%{width:85%;}
+    100%{width:35%;}
+}
+
+@keyframes bounce{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-4px);}
+    100%{transform:translateY(0);}
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+/* tablet */
+@media (max-width:768px){
+    .edu-item{
+        flex-direction:column;
+        gap:15px;
+        padding:20px;
+    }
+
+    .edu-year{
+        width:100%;
+    }
+}
+
+/* mobile */
+@media (max-width:576px){
+    .education h4{
+        font-size:1.4rem;
+    }
+
+    .edu-item{
+        padding:16px;
+        border-radius:16px;
+    }
+
+    .edu-info h5{
+        font-size:1rem;
+    }
+
+    .edu-info p{
+        font-size:.85rem;
+    }
+
+    .edu-year{
+        font-size:.8rem;
+    }
+}
+
+/* small mobile */
+@media (max-width:380px){
+    .edu-item{
+        padding:14px;
+    }
+
+    .education h4{
+        font-size:1.3rem;
+    }
+}
+
+   /* ========= EDUCATION SECTION css start =============== */
 
 /* ================= CV DOWNLOAD BUTTON Animation start ================= */
 .about-btns{
