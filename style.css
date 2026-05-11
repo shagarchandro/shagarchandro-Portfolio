@@ -738,19 +738,469 @@ a{
 }
 
 /* ================= IMAGE ================= */
-.about-img img{
-    width:340px;
-    border-radius:20px;
-    border:4px solid greenyellow;
-    transition:.4s ease;
+/* ==================== about picture  gellary css start ========================  */
+
+/* ==================================================
+   FULL RESPONSIVE PREMIUM GALLERY
+================================================== */
+
+.about-gallery{
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    margin: auto;
+
+    animation: floating 5s ease-in-out infinite;
 }
 
-/* hover effect */
-.about-img img:hover{
-    transform: scale(1.05) rotate(1deg);
-    box-shadow: 0 0 25px rgba(173,255,47,.4);
+/* Floating Animation */
+
+@keyframes floating{
+
+    0%{
+        transform: translateY(0);
+    }
+
+    50%{
+        transform: translateY(-12px);
+    }
+
+    100%{
+        transform: translateY(0);
+    }
+
 }
 
+/* ==================================================
+   MAIN SLIDER
+================================================== */
+
+.gallery-slider{
+
+    position: relative;
+
+    width: 100%;
+    height: 540px;
+
+    overflow: hidden;
+
+    border-radius: 35px;
+
+    background: rgba(255,255,255,0.05);
+
+    backdrop-filter: blur(16px);
+
+    border: 2px solid rgba(182,255,0,0.45);
+
+    box-shadow:
+    0 0 20px rgba(182,255,0,0.25),
+    0 0 60px rgba(182,255,0,0.12),
+    inset 0 0 25px rgba(255,255,255,0.05);
+
+    transition:
+    transform .5s ease,
+    box-shadow .5s ease,
+    border .5s ease;
+}
+
+/* Hover */
+
+.gallery-slider:hover{
+
+    transform: scale(1.02);
+
+    border-color: #b6ff00;
+
+    box-shadow:
+    0 0 28px rgba(182,255,0,0.45),
+    0 0 80px rgba(182,255,0,0.18),
+    inset 0 0 35px rgba(255,255,255,0.06);
+
+}
+
+/* ==================================================
+   IMAGES
+================================================== */
+
+.gallery-img{
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    opacity: 0;
+
+    transform: scale(1.1);
+
+    filter: brightness(.7);
+
+    transition:
+    opacity 1.2s ease,
+    transform 6s ease,
+    filter 1s ease;
+}
+
+/* Active Image */
+
+.gallery-img.active{
+
+    opacity: 1;
+
+    transform: scale(1);
+
+    filter: brightness(1);
+
+    animation: smoothZoom 7s ease-in-out infinite;
+}
+
+/* Smooth Zoom Animation */
+
+@keyframes smoothZoom{
+
+    0%{
+        transform: scale(1);
+    }
+
+    50%{
+        transform: scale(1.06);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+
+}
+
+/* ==================================================
+   OVERLAY
+================================================== */
+
+.gallery-slider::before{
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+    linear-gradient(
+        to top,
+        rgba(0,0,0,0.55),
+        transparent 40%,
+        rgba(0,0,0,0.15)
+    );
+
+    z-index: 2;
+}
+
+/* ==================================================
+   GLOW EFFECT
+================================================== */
+
+.gallery-slider::after{
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    background: rgba(182,255,0,0.15);
+
+    filter: blur(90px);
+
+    border-radius: 50%;
+
+    top: -40px;
+    right: -40px;
+
+    z-index: 1;
+
+    animation: glowMove 8s linear infinite;
+}
+
+/* Glow Animation */
+
+@keyframes glowMove{
+
+    0%{
+        transform: translate(0,0);
+    }
+
+    50%{
+        transform: translate(-15px,15px);
+    }
+
+    100%{
+        transform: translate(0,0);
+    }
+
+}
+
+/* ==================================================
+   BUTTONS
+================================================== */
+
+.prev,
+.next{
+
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 52px;
+    height: 52px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,0.15);
+
+    background: rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(10px);
+
+    color: #fff;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    z-index: 10;
+
+    transition: all .4s ease;
+}
+
+/* Button Position */
+
+.prev{
+    left: 16px;
+}
+
+.next{
+    right: 16px;
+}
+
+/* Hover */
+
+.prev:hover,
+.next:hover{
+
+    background: #b6ff00;
+
+    color: #000;
+
+    transform: translateY(-50%) scale(1.1);
+
+    box-shadow:
+    0 0 18px #b6ff00,
+    0 0 40px rgba(182,255,0,0.45);
+}
+
+/* Click */
+
+.prev:active,
+.next:active{
+
+    transform: translateY(-50%) scale(.95);
+}
+
+/* ==================================================
+   DOTS
+================================================== */
+
+.gallery-dots{
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 20px;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    gap: 10px;
+
+    z-index: 10;
+}
+
+.dot{
+
+    width: 11px;
+    height: 11px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.35);
+
+    cursor: pointer;
+
+    transition: all .4s ease;
+}
+
+/* Active Dot */
+
+.dot.active{
+
+    width: 32px;
+
+    border-radius: 20px;
+
+    background: #b6ff00;
+
+    box-shadow:
+    0 0 10px #b6ff00,
+    0 0 22px rgba(182,255,0,.5);
+}
+
+/* ==================================================
+   RESPONSIVE DESIGN
+================================================== */
+
+/* Large Laptop */
+
+@media (max-width:1200px){
+
+    .gallery-slider{
+        height: 500px;
+    }
+
+}
+
+/* Laptop */
+
+@media (max-width:992px){
+
+    .about-gallery{
+        max-width: 100%;
+    }
+
+    .gallery-slider{
+        height: 440px;
+    }
+
+}
+
+/* Tablet */
+
+@media (max-width:768px){
+
+    .gallery-slider{
+
+        height: 380px;
+
+        border-radius: 28px;
+    }
+
+    .prev,
+    .next{
+
+        width: 44px;
+        height: 44px;
+
+        font-size: 18px;
+    }
+
+}
+
+/* Large Mobile */
+
+@media (max-width:576px){
+
+    .gallery-slider{
+
+        height: 320px;
+
+        border-radius: 22px;
+    }
+
+    .prev,
+    .next{
+
+        width: 38px;
+        height: 38px;
+
+        font-size: 15px;
+    }
+
+    .dot{
+
+        width: 9px;
+        height: 9px;
+    }
+
+    .dot.active{
+        width: 26px;
+    }
+
+}
+
+/* Small Mobile */
+
+@media (max-width:420px){
+
+    .gallery-slider{
+
+        height: 270px;
+
+        border-radius: 18px;
+    }
+
+    .prev,
+    .next{
+
+        width: 34px;
+        height: 34px;
+
+        font-size: 14px;
+    }
+
+    .gallery-dots{
+        bottom: 14px;
+    }
+
+}
+
+/* Extra Small Devices */
+
+@media (max-width:320px){
+
+    .gallery-slider{
+
+        height: 230px;
+
+        border-radius: 16px;
+    }
+
+    .prev,
+    .next{
+
+        width: 30px;
+        height: 30px;
+
+        font-size: 12px;
+    }
+
+    .dot{
+        width: 7px;
+        height: 7px;
+    }
+
+    .dot.active{
+        width: 20px;
+    }
+
+}
+
+/* ======================== about picture  gellary css start ===========================   */
 /* ================= CONTENT ================= */
 .about-content{
     flex:1;

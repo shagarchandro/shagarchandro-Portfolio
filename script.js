@@ -178,4 +178,92 @@ downloadBtn.addEventListener("click", () => {
     });
     /* ================= DOWNLOAD button dawonloding ANIMATION ENd ================= */
 
+/* about picture  gellary java script start   */
     
+
+
+
+
+
+
+
+const images = document.querySelectorAll(".gallery-img");
+const dots = document.querySelectorAll(".dot");
+
+const nextBtn = document.querySelector(".next");
+const prevBtn = document.querySelector(".prev");
+
+let index = 0;
+
+/* Show Image */
+
+function showImage(i){
+
+    images.forEach((img)=>{
+        img.classList.remove("active");
+    });
+
+    dots.forEach((dot)=>{
+        dot.classList.remove("active");
+    });
+
+    images[i].classList.add("active");
+    dots[i].classList.add("active");
+}
+
+/* Next Button */
+
+nextBtn.addEventListener("click", ()=>{
+
+    index++;
+
+    if(index >= images.length){
+        index = 0;
+    }
+
+    showImage(index);
+
+});
+
+/* Prev Button */
+
+prevBtn.addEventListener("click", ()=>{
+
+    index--;
+
+    if(index < 0){
+        index = images.length - 1;
+    }
+
+    showImage(index);
+
+});
+
+/* Dots Click */
+
+dots.forEach((dot,i)=>{
+
+    dot.addEventListener("click", ()=>{
+
+        index = i;
+
+        showImage(index);
+
+    });
+
+});
+
+/* Auto Slide */
+
+setInterval(()=>{
+
+    index++;
+
+    if(index >= images.length){
+        index = 0;
+    }
+
+    showImage(index);
+
+},4000);
+
