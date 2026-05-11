@@ -684,7 +684,6 @@ a{
 
  /*============= Hi, I'm Shagar chandro  animation section start  =========== */
  
-
 #Hi-I-m-Shagar-chandro::after{
     content: "";
     position: absolute;
@@ -711,8 +710,7 @@ a{
 
  /*============= Hi, I'm Shagar chandro  animation section end  =========== */
 
-
-    /* =================== home section end ==============================  */
+    /* =================== Home section end ==============================  */
 
  /* <!-- =================About section  start =================-->  */
 .about{
@@ -738,6 +736,7 @@ a{
 }
 
 /* ================= IMAGE ================= */
+
 /* ==================== about picture  gellary css start ========================  */
 
 .about-gallery{
@@ -767,9 +766,7 @@ a{
 
 }
 
-/* ==================================================
-   MAIN SLIDER
-================================================== */
+/* ============= MAIN SLIDER =================== */
 
 .gallery-slider{
 
@@ -783,9 +780,6 @@ a{
     border-radius: 35px;
 
     background: rgba(255,255,255,0.05);
-
-    backdrop-filter: blur(16px);
-
     border: 2px solid rgba(182,255,0,0.45);
 
     box-shadow:
@@ -872,9 +866,7 @@ a{
 
 }
 
-/* ==================================================
-   OVERLAY
-================================================== */
+/* ========= OVERLAY ============= */
 
 .gallery-slider::before{
 
@@ -895,9 +887,7 @@ a{
     z-index: 2;
 }
 
-/* ==================================================
-   GLOW EFFECT
-================================================== */
+/* ============== GLOW EFFECT ============== */
 
 .gallery-slider::after{
 
@@ -922,7 +912,7 @@ a{
     animation: glowMove 8s linear infinite;
 }
 
-/* Glow Animation */
+/*  ======== Glow Animation ========== */
 
 @keyframes glowMove{
 
@@ -940,9 +930,7 @@ a{
 
 }
 
-/* ==================================================
-   BUTTONS
-================================================== */
+/* =============== BUTTONS ================= */
 
 .prev,
 .next{
@@ -962,8 +950,6 @@ a{
 
     background: rgba(255,255,255,0.08);
 
-    backdrop-filter: blur(10px);
-
     color: #fff;
 
     font-size: 22px;
@@ -975,7 +961,7 @@ a{
     transition: all .4s ease;
 }
 
-/* Button Position */
+/* ====== Button Position === */
 
 .prev{
     left: 16px;
@@ -1009,9 +995,7 @@ a{
     transform: translateY(-50%) scale(.95);
 }
 
-/* ==================================================
-   DOTS
-================================================== */
+/* ====== DOTS ======= */
 
 .gallery-dots{
 
@@ -1057,9 +1041,7 @@ a{
     0 0 22px rgba(182,255,0,.5);
 }
 
-/* ==================================================
-   RESPONSIVE DESIGN
-================================================== */
+/* ======== RESPONSIVE DESIGN ========== */
 
 /* Large Laptop */
 
@@ -1196,7 +1178,7 @@ a{
 
 }
 
-/* ======================== about picture  gellary css End ===========================   */
+/* ======================== About picture  gellary css End ===========================   */
 /* ================= CONTENT ================= */
 .about-content{
     flex:1;
@@ -1238,8 +1220,7 @@ a{
 }
 
 /* ================= EDUCATION ================= */
-/* =========================
-   /* EDUCATION SECTION css start */
+   /* ========== EDUCATION SECTION css start ======== */
 
 .education{
     width:100%;
@@ -1273,9 +1254,7 @@ a{
     animation:lineFlow 2.5s infinite ease-in-out;
 }
 
-/* =========================
-   CARD DESIGN (PREMIUM GLASS)
-========================= */
+/* =========== CARD DESIGN (PREMIUM GLASS) ========= */
 
 .edu-item{
     position:relative;
@@ -1291,7 +1270,6 @@ a{
     border-radius:20px;
 
     background:rgba(31,36,45,.75);
-    backdrop-filter:blur(14px);
 
     border:1px solid rgba(255,255,255,.08);
     border-left:5px solid #a6ff00;
@@ -1365,9 +1343,7 @@ a{
     animation:pulseGlow 2.5s infinite;
 }
 
-/* =========================
-   INFO
-========================= */
+/* ========================= INFO ========================= */
 
 .edu-info{
     flex:1;
@@ -1409,9 +1385,7 @@ a{
     animation:bounce 1.5s infinite;
 }
 
-/* =========================
-   ANIMATIONS
-========================= */
+/* ========================= ANIMATIONS ========================= */
 
 @keyframes fadeUp{
     from{
@@ -1442,9 +1416,7 @@ a{
     100%{transform:translateY(0);}
 }
 
-/* =========================
-   RESPONSIVE DESIGN
-========================= */
+/* ========================= RESPONSIVE DESIGN ========================= */
 
 /* tablet */
 @media (max-width:768px){
@@ -1496,7 +1468,7 @@ a{
 
    /* ========= EDUCATION SECTION css start =============== */
 
-/* ================= CV DOWNLOAD BUTTON Animation start ================= */
+/* ================= CV DOWONLOAD BUTTON Animation start ================= */
 .about-btns{
     margin-top:25px;
     display:flex;
@@ -1741,14 +1713,6 @@ a{
 
  /* ================== skills section start ======================== */
 
-/* =========================
-   SKILLS SECTION ULTRA PREMIUM
-========================= */
-
-/* =========================
-   SKILLS SECTION (SMOOTH PREMIUM)
-========================= */
-
 .skills{
     padding:110px 8%;
     background: radial-gradient(circle at top,#1f242d,#0b1220);
@@ -1756,9 +1720,7 @@ a{
     overflow:hidden;
 }
 
-/* =========================
-   HEADING (SMOOTH)
-========================= */
+/* ========================= HEADING (SMOOTH) ========================= */
 
 .skills-heading{
     text-align:center;
@@ -1791,9 +1753,7 @@ a{
     line-height:28px;
 }
 
-/* =========================
-   GRID (SMOOTH RESPONSIVE)
-========================= */
+/* ========================= GRID (SMOOTH RESPONSIVE) ========================= */
 
 .skills-container{
     display:grid;
@@ -1801,16 +1761,13 @@ a{
     gap:22px;
 }
 
-/* =========================
-   CARD (ULTRA SMOOTH)
-========================= */
+/* ========================= CARD (ULTRA SMOOTH) ========================= */
 
 .skill-box{
     position:relative;
     overflow:hidden;
 
     background:rgba(255,255,255,0.03);
-    backdrop-filter:blur(12px);
 
     border-radius:20px;
 
@@ -1919,9 +1876,7 @@ a{
     gap:6px;
 }
 
-/* =========================
-   MY SKILLS TEXT FIXED + SMOOTH
-========================= */
+/* ========================= MY SKILLS TEXT FIXED + SMOOTH ========================= */
 
 #my-skills{
     position:relative;
@@ -1955,9 +1910,7 @@ a{
     width:100%;
 }
 
-/* =========================
-   ANIMATIONS (SMOOTH)
-========================= */
+/* ========================= ANIMATIONS (SMOOTH)  ========================= */
 
 @keyframes fadeIn{
     from{
@@ -1986,9 +1939,7 @@ a{
     50%{transform:scale(1.1);}
 }
 
-/* =========================
-   RESPONSIVE (CLEAN)
-========================= */
+/* ========================= RESPONSIVE (CLEAN) ======================== */
 
 /* tablet */
 @media(max-width:992px){
@@ -2033,15 +1984,39 @@ a{
  /* =====================my skills animation section end========================  */
 
 
- /* skills end */
+ /* =============== skills end ================ */
 
  /* ===========================project section start========================= */
 
-/* ================= PROJECTS ================= */
+.project-box{
+    position: relative;
+    overflow: hidden;
+}
 
-/* =========================
-   PROJECTS SECTION (ULTRA PREMIUM)
-========================= */
+/* overlay click block  */
+.project-box::before,
+.project-box::after{
+    pointer-events: none;
+}
+
+/* content  */
+.project-content{
+    position: relative;
+    z-index: 10;
+}
+
+/* button  */
+.project-links{
+    position: relative;
+    z-index: 99;
+}
+
+.project-links a{
+    position: relative;
+    z-index: 100;
+    text-decoration: none;
+    pointer-events: auto;
+}
 
 .projects{
     padding:110px 9%;
@@ -2050,9 +2025,7 @@ a{
     overflow:hidden;
 }
 
-/* =========================
-   SECTION ANIMATION
-========================= */
+/* ========================= SECTION ANIMATION ========================= */
 
 .projects{
     opacity:0;
@@ -2130,7 +2103,6 @@ a{
     overflow:hidden;
 
     background:rgba(255,255,255,0.03);
-    backdrop-filter:blur(12px);
 
     border-radius:22px;
 
@@ -2638,7 +2610,7 @@ a{
         flex-direction: column;
     }
 }
-/* contact Submit button End */
+/* =========== contact Submit button End ============== */
 
 /* ================= contact-me animation section start ================= */
 
@@ -2861,8 +2833,8 @@ a{
     padding-left:5px;
 }
 
-
 /* ================== SOCIAL ICONS style start ==================== */
+
 .social-links {
     margin-top: 15px;
     display: flex;
@@ -2937,8 +2909,8 @@ a{
         font-size: 14px;
     }
 }
-/* ================ SOCIAL ICONS style end =================== */
 
+/* ================ SOCIAL ICONS style end =================== */
 
 /* Bottom */
 .footer-bottom{
@@ -3009,8 +2981,6 @@ section.show {
 }
 
 /* ================== Section animation End ================ */
-
-
 
 /* Email auto link add css start */
 .email-link,
