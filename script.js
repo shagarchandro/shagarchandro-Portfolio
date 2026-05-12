@@ -262,4 +262,3 @@ setInterval(()=>{
 
 /* ============= about picture-gellary java script End ==================  */
 
-

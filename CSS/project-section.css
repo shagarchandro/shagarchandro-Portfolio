@@ -1,0 +1,368 @@
+
+ /* ===========================project section start========================= */
+
+.project-box{
+    position: relative;
+    overflow: hidden;
+}
+
+/* overlay click block  */
+.project-box::before,
+.project-box::after{
+    pointer-events: none;
+}
+
+/* content  */
+.project-content{
+    position: relative;
+    z-index: 10;
+}
+
+/* button  */
+.project-links{
+    position: relative;
+    z-index: 99;
+}
+
+.project-links a{
+    position: relative;
+    z-index: 100;
+    text-decoration: none;
+    pointer-events: auto;
+}
+
+.projects{
+    padding:110px 9%;
+    background: radial-gradient(circle at top,#0f172a,#0b1220);
+    color:#fff;
+    overflow:hidden;
+}
+
+/* ========================= SECTION ANIMATION ========================= */
+
+.projects{
+    opacity:0;
+    transform:translateY(60px);
+    animation:fadeUp 1s ease forwards;
+}
+
+/* ================= HEADING ================= */
+
+.projects-heading{
+    text-align:center;
+    margin-bottom:70px;
+
+    opacity:0;
+    transform:translateY(30px);
+    animation:fadeInDown 1s ease forwards;
+}
+
+.projects-heading h2{
+    font-size:clamp(24px,4vw,42px);
+    font-weight:800;
+    display:inline-block;
+    position:relative;
+}
+
+.projects-heading h2 i{
+    color:greenyellow;
+    margin-right:8px;
+    animation:pulseIcon 2s infinite;
+}
+
+/* animated underline */
+.projects-heading h2::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-8px;
+
+    width:0%;
+    height:3px;
+
+    background:linear-gradient(90deg,greenyellow,#00ffd5,#4f46e5);
+
+    border-radius:50px;
+
+    transition:.4s ease;
+}
+
+.projects-heading h2:hover::after{
+    width:100%;
+}
+
+.projects-heading p{
+    max-width:750px;
+    margin:auto;
+    margin-top:10px;
+
+    font-size:clamp(14px,2vw,16px);
+    line-height:28px;
+    color:#cfcfcf;
+}
+
+/* ================= GRID ================= */
+
+.projects-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+    gap:28px;
+}
+
+/* ================= CARD ================= */
+
+.project-box{
+    position:relative;
+    overflow:hidden;
+
+    background:rgba(255,255,255,0.03);
+
+    border-radius:22px;
+
+    border:1px solid rgba(173,255,47,.12);
+
+    transition:.6s ease;
+
+    opacity:0;
+    transform:translateY(60px) scale(.92);
+
+    animation:cardReveal .9s ease forwards;
+    animation-delay:calc(.12s * var(--i));
+}
+
+/* neon border glow */
+.project-box::before{
+    content:'';
+    position:absolute;
+    inset:0;
+
+    border-radius:22px;
+
+    background:linear-gradient(120deg,transparent,greenyellow,#00ffd5,transparent);
+
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+
+    opacity:0;
+    transition:.4s;
+}
+
+.project-box:hover::before{
+    opacity:1;
+}
+
+/* glow background bubble */
+.project-box::after{
+    content:'';
+    position:absolute;
+
+    width:200px;
+    height:200px;
+
+    background:rgba(173,255,47,.06);
+
+    border-radius:50%;
+
+    top:-80px;
+    right:-80px;
+
+    transition:.5s;
+}
+
+.project-box:hover::after{
+    transform:scale(1.4);
+}
+
+/* hover */
+.project-box:hover{
+    transform:translateY(-14px) scale(1.04);
+    box-shadow:
+        0 25px 50px rgba(173,255,47,.15),
+        0 0 80px rgba(0,255,213,.08);
+}
+
+/* ================= IMAGE ================= */
+
+.project-box img{
+    width:100%;
+    height:210px;
+    object-fit:cover;
+
+    transition:.6s ease;
+}
+
+.project-box:hover img{
+    transform:scale(1.12);
+    filter:brightness(1.1);
+}
+
+/* ================= CONTENT ================= */
+
+.project-content{
+    padding:22px;
+}
+
+.project-content h3{
+    font-size:20px;
+    margin-bottom:8px;
+    color:#fff;
+}
+
+.project-content p{
+    font-size:14px;
+    color:#cfcfcf;
+    line-height:24px;
+    margin-bottom:15px;
+}
+
+/* ================= BUTTONS ================= */
+
+.project-links{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.project-links a{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+
+    padding:8px 14px;
+
+    border-radius:30px;
+
+    border:1px solid greenyellow;
+
+    color:greenyellow;
+    font-size:14px;
+
+    transition:.4s ease;
+}
+
+.project-links a:hover{
+    background:greenyellow;
+    color:#111;
+    transform:translateY(-3px);
+    box-shadow:0 0 20px rgba(173,255,47,.5);
+}
+
+/* ================= TITLE EFFECT ================= */
+
+#my-projects{
+    position:relative;
+    display:inline-block;
+}
+
+#my-projects::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-5px;
+
+    width:0%;
+    height:2px;
+
+    background:linear-gradient(90deg,greenyellow,#00ffd5);
+
+    transition:.4s ease;
+}
+
+#my-projects:hover{
+    color:greenyellow;
+    text-shadow:0 0 12px rgba(173,255,47,.5);
+}
+
+#my-projects:hover::after{
+    width:100%;
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(60px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeInDown{
+    from{
+        opacity:0;
+        transform:translateY(-30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes cardReveal{
+    from{
+        opacity:0;
+        transform:translateY(60px) scale(.9);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+@keyframes pulseIcon{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.2);}
+    100%{transform:scale(1);}
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* tablet */
+@media(max-width:992px){
+    .projects{
+        padding:90px 6%;
+    }
+}
+
+/* mobile */
+@media(max-width:768px){
+    .projects-container{
+        grid-template-columns:1fr;
+    }
+
+    .project-box img{
+        height:180px;
+    }
+}
+
+/* small mobile */
+@media(max-width:480px){
+    .projects-heading h2{
+        font-size:22px;
+    }
+
+    .project-content h3{
+        font-size:18px;
+    }
+
+    .project-content p{
+        font-size:13px;
+    }
+
+    .project-links a{
+        font-size:12px;
+        padding:6px 10px;
+    }
+}
+ /* ================= My project animation section End==================  */
+
+/* ================= Project section End ================= */
+
+ 

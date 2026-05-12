@@ -1,480 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
-a{
-    color: azure;
-    text-decoration: none;
-}
-
-/* ===== upper logo animation start ===== */
-.logo {
-    font-size: clamp(24px, 4vw, 40px);
-    font-weight: 800;
-    letter-spacing: 0.8px;
-    display: inline-block;
-    cursor: pointer;
-    position: relative;
-
-    /* Clean Gradient */
-    background: linear-gradient(120deg, #22c55e, #4f46e5, #06b6d4);
-    background-size: 300% 300%;
-
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    animation: gradientMove 6s ease infinite;
-
-    transition: all 0.35s ease;
-}
-
-/* Smooth gradient */
-@keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-/* Subtle underline glow */
-.logo::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: -6px;
-    transform: translateX(-50%);
-    width: 0%;
-    height: 2px;
-    border-radius: 10px;
-
-    background: linear-gradient(90deg, #22c55e, #4f46e5);
-    transition: width 0.4s ease;
-}
-
-/* Hover effect */
-.logo:hover {
-    transform: translateY(-2px) scale(1.05);
-    letter-spacing: 1.5px;
-    filter: brightness(1.2);
-}
-
-.logo:hover::after {
-    width: 100%;
-}
-
-/* Click feel */
-.logo:active {
-    transform: scale(0.96);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .logo {
-        font-size: clamp(20px, 5vw, 30px);
-        letter-spacing: 0.5px;
-    }
-}
-
-@media (max-width: 480px) {
-    .logo {
-        font-size: 20px;
-        letter-spacing: 0.3px;
-    }
-
-    .logo::after {
-        height: 1.5px;
-    }
-}
-/* ===== upper logo animation end ===== */
-
-/* ================= Navbar Start ================= */
-.navbar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    padding: 20px 10%;
-    display: flex;
-    align-items: center;
-    z-index: 100;
-    justify-content: space-between;
-    background: rgba(33, 38, 48, 0.95);
-    visibility: hidden;
-    opacity: 0;
-    animation: show-content 1.5s linear forwards;
-    animation-delay: 1.2s;
-    transition: all 0.3s ease;
-}
-
-/* Navbar shadow on scroll (optional, add via JS if needed) */
-.navbar.scrolled {
-    padding: 12px 10%;
-    background: rgba(33, 38, 48, 0.98);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-}
-
-@keyframes show-content {
-    100% {
-        visibility: visible;
-        opacity: 1;
-    }
-}
-
-.navbar .logo {
-    font-size: 25px;
-    font-weight: 500;
-}
-
-/* NAV LINKS */
-.navbar ul {
-    display: flex;
-    gap: 20px;
-    position: static;
-    margin: 0;
-    padding: 0;
-}
-
-.navbar ul li {
-    list-style: none;
-    margin-left: 30px;
-}
-
-.navbar ul li a {
-    font-size: 18px;
-    font-weight: 500;
-    transition: .5s;
-    white-space: nowrap;
-    position: relative;
-    padding: 5px 0;
-}
-
-/* Premium link hover effect */
-.navbar ul li a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(90deg, #22c55e, #4f46e5);
-    transition: width 0.3s ease;
-    border-radius: 2px;
-}
-
-.navbar ul li:hover a::after,
-.navbar ul li.active a::after {
-    width: 100%;
-    background: linear-gradient(120deg, #22c55e, #4f46e5, #06b6d4);
-     transition: width 0.3s ease;
-}
-
-.navbar ul li:hover a,
-.navbar ul li.active a {
-    color: rgb(46, 194, 53);
-}
-
-/* =================== MENU ICON style start =========================== */
-.menu-toggle {
-    display: flex;
-    position: fixed;
-    top: clamp(10px, 2vw, 18px);
-    right: clamp(10px, 2vw, 18px);
-    z-index: 1000;
-
-    width: clamp(42px, 5vw, 50px);
-    height: clamp(42px, 5vw, 50px);
-
-    border-radius: 16px;
-    cursor: pointer;
-
-    /* Better glass + gradient */
-    background: linear-gradient(135deg, rgba(34, 197, 94, 0.25), rgba(79, 70, 229, 0.25));
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
-
-    align-items: center;
-    justify-content: center;
-
-    transition: all 0.35s ease;
-}
-
-/* Glow effect */
-.menu-toggle::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    background: linear-gradient(135deg, #22c55e, #4f46e5);
-    opacity: 0.25;
-    filter: blur(12px);
-    z-index: -1;
-}
-
-/* Force show/hide based on breakpoints */
-@media (max-width: 1024px) {
-    .menu-toggle {
-        display: flex !important;
-    }
-}
-
-@media (min-width: 1025px) {
-    .menu-toggle {
-        display: none !important;
-    }
-}
-
-/* Hamburger lines */
-.menu-toggle span {
-    position: absolute;
-    width: clamp(20px, 3vw, 26px);
-    height: 2.5px;
-    background: #ffffff;
-    border-radius: 10px;
-    transition: all 0.4s ease;
-}
-
-/* Line spacing */
-.menu-toggle span:nth-child(1) {
-    transform: translateY(-8px);
-}
-
-.menu-toggle span:nth-child(2) {
-    opacity: 1;
-}
-
-.menu-toggle span:nth-child(3) {
-    transform: translateY(8px);
-}
-
-/* Hover animation */
-.menu-toggle:hover {
-    transform: translateY(-4px) scale(1.08);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
-}
-
-/* Click press */
-.menu-toggle:active {
-    transform: scale(0.92);
-}
-
-/* Active animation (hamburger → X) */
-.menu-toggle.active span:nth-child(1) {
-    transform: rotate(45deg);
-}
-
-.menu-toggle.active span:nth-child(2) {
-    opacity: 0;
-    transform: scale(0);
-}
-
-.menu-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg);
-}
-
-/* Active color change */
-.menu-toggle.active {
-    background: linear-gradient(135deg, rgba(239, 68, 68, 0.4), rgba(249, 115, 22, 0.4));
-}
-
-/* ========== Responsive Navbar Adjustments (Premium) ========== */
-@media (max-width: 1024px) {
-    .navbar {
-        padding: 16px 6%;
-        background: rgba(33, 38, 48, 0.98);
-    }
-
-    /* Premium mobile menu */
-    .navbar ul {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 75%;
-        max-width: 350px;
-        height: 100vh;
-        background: linear-gradient(135deg, rgba(26, 30, 36, 0.98), rgba(20, 24, 30, 0.98));
-
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 35px;
-        transition: right 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-        z-index: 999;
-        box-shadow: -10px 0 40px rgba(0, 0, 0, 0.4);
-        margin: 0;
-        padding: 20px;
-        border-left: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .navbar ul.active {
-        max-width: 50vh;
-        max-height: 60vh;
-        margin-top: 20px;
-        right: 0;
-        border-radius: 25px;
-    }
-
-    .navbar ul li {
-        margin-left: 0;
-        opacity: 0;
-        transform: translateX(30px);
-        transition: all 0.4s ease;
-    }
-
-    .navbar ul.active li {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-    /* Staggered animation for menu items */
-    .navbar ul.active li:nth-child(1) { transition-delay: 0.05s; }
-    .navbar ul.active li:nth-child(2) { transition-delay: 0.1s; }
-    .navbar ul.active li:nth-child(3) { transition-delay: 0.15s; }
-    .navbar ul.active li:nth-child(4) { transition-delay: 0.2s; }
-    .navbar ul.active li:nth-child(5) { transition-delay: 0.25s; }
-    .navbar ul.active li:nth-child(6) { transition-delay: 0.3s; }
-
-    .navbar ul li a {
-        font-size: 22px;
-        font-weight: 600;
-        color: #fff;
-        padding: 8px 0;
-    }
-
-    .navbar ul li a::after {
-        height: 3px;
-        background: linear-gradient(90deg, #22c55e, #4f46e5, #06b6d4);
-    }
-
-    /* Overlay when menu is open */
-    body.menu-open::before {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.6);
-        z-index: 998;
-        animation: fadeIn 0.3s ease;
-    }
-    
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
-}
-
-/* Tablet landscape adjustments */
-@media (max-width: 1024px) and (min-width: 768px) {
-    .navbar ul {
-        width: 50%;
-        max-width: 320px;
-        gap: 40px;
-    }
-
-    .navbar ul li a {
-        font-size: 20px;
-    }
-}
-
-/* Small mobile devices */
-@media (max-width: 480px) {
-    .navbar {
-        padding: 14px 5%;
-    }
-
-    .navbar ul {
-        width: 85%;
-        max-width: 300px;
-        gap: 28px;
-    }
-
-    .navbar ul li a {
-        font-size: 18px;
-    }
-}
-
-/* Very small devices (iPhone SE, etc.) */
-@media (max-width: 380px) {
-    .navbar ul {
-        width: 90%;
-        gap: 24px;
-    }
-
-    .navbar ul li a {
-        font-size: 16px;
-    }
-}
-
-/* Landscape orientation fix for mobile */
-@media (max-width: 1024px) and (orientation: landscape) {
-    .navbar ul {
-        height: auto;
-        max-height: 90vh;
-        padding: 30px 20px;
-        gap: 18px;
-        overflow-y: auto;
-        justify-content: flex-start;
-    }
-
-    .navbar ul li a {
-        font-size: 16px;
-    }
-}
-
-/* Tablet and desktop nav link spacing refinement */
-@media (min-width: 1025px) and (max-width: 1280px) {
-    .navbar {
-        padding: 20px 6%;
-    }
-
-    .navbar ul li {
-        margin-left: 20px;
-    }
-
-    .navbar ul li a {
-        font-size: 16px;
-    }
-}
-
-/* Large desktop screens */
-@media (min-width: 1600px) {
-    .navbar {
-        padding: 24px 12%;
-    }
-
-    .navbar ul li {
-        margin-left: 40px;
-    }
-
-    .navbar ul li a {
-        font-size: 20px;
-    }
-}
-
-/* Premium touch: Add a subtle border bottom to navbar */
-.navbar::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(34, 197, 94, 0.3), rgba(79, 70, 229, 0.3), transparent);
-}
-
-/* Smooth scroll behavior for the whole page */
-html {
-    scroll-behavior: smooth;
-}
-
-/* =================MENU ICON style end================== */
-
 /* ================== Home Section start ================= */
 /* ========== RESET & BASE STYLES ============= */
 * {
@@ -662,7 +185,7 @@ body {
     transform: scale(1);
 }
 
-/* ========== IMAGE SECTION ========== */
+/* ========== IMAGE SECTION - FIXED BORDER ANIMATION ========== */
 .home-img {
     flex: 1;
     display: flex;
@@ -675,34 +198,76 @@ body {
     width: clamp(200px, 30vw, 400px);
     height: clamp(200px, 30vw, 400px);
     border-radius: 50%;
-    padding: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    background: var(--bg-dark);
 }
 
-.home-img .img-box::after,
+/* Rotating border effect */
 .home-img .img-box::before {
     content: '';
     position: absolute;
-    width: 100%;
-    height: 100%;
-    background: conic-gradient(transparent, transparent, transparent, var(--primary-color));
-    animation: rotate-border 11s linear infinite;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    background: conic-gradient(
+        from 0deg,
+        transparent 0deg,
+        transparent 60deg,
+        var(--primary-color) 120deg,
+        transparent 180deg,
+        transparent 240deg,
+        var(--primary-color) 300deg,
+        transparent 360deg
+    );
     border-radius: 50%;
+    animation: rotate-border 6s linear infinite;
+    z-index: 0;
 }
 
+/* Second layer for continuous effect */
 .home-img .img-box::after {
-    animation-delay: -6s;
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: conic-gradient(
+        from 180deg,
+        transparent 0deg,
+        var(--primary-color) 40deg,
+        transparent 100deg,
+        transparent 220deg,
+        var(--primary-color) 280deg,
+        transparent 360deg
+    );
+    border-radius: 50%;
+    animation: rotate-border-reverse 8s linear infinite;
+    z-index: 0;
 }
 
 @keyframes rotate-border {
+    0% {
+        transform: rotate(0deg);
+    }
     100% {
         transform: rotate(360deg);
     }
 }
 
+@keyframes rotate-border-reverse {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+/* Inner image container */
 .home-img .img-box .img-item {
     position: relative;
     width: 100%;
@@ -712,17 +277,32 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1;
     overflow: hidden;
+    z-index: 1;
+}
+
+/* Inner shadow for depth */
+.home-img .img-box .img-item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    pointer-events: none;
 }
 
 .home-img .img-box .img-item img {
-    position: absolute;
-    top: 20px;
-    width: 85%;
+    width: 90%;
+    height: auto;
     object-fit: cover;
     mix-blend-mode: lighten;
     border-radius: 50%;
+    transition: transform 0.5s ease;
+}
+
+.home-img .img-box .img-item img:hover {
+    transform: scale(1.02);
 }
 
 /* ========== BARS ANIMATION ========== */
@@ -763,7 +343,7 @@ body {
     align-items: center;
     padding: 15px 8%;
     background: rgba(31, 36, 45, 0.95);
-
+    backdrop-filter: blur(10px);
     z-index: 1002;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
@@ -773,6 +353,11 @@ body {
     font-weight: bold;
     color: var(--primary-color);
     text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.navbar .logo:hover {
+    text-shadow: 0 0 10px rgba(173, 255, 47, 0.5);
 }
 
 .navbar ul {
@@ -821,6 +406,12 @@ body {
     background: none;
     border: none;
     z-index: 1003;
+    transition: var(--transition-smooth);
+}
+
+.menu-toggle:hover {
+    transform: scale(1.1);
+    text-shadow: 0 0 10px rgba(173, 255, 47, 0.5);
 }
 
 .nav-overlay {
@@ -912,6 +503,7 @@ body {
         width: 280px;
         height: 100vh;
         background: linear-gradient(145deg, rgba(20, 25, 35, 0.98), rgba(30, 35, 45, 0.98));
+        backdrop-filter: blur(15px);
         flex-direction: column;
         align-items: center;
         justify-content: center;
@@ -919,6 +511,7 @@ body {
         transition: right 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
         z-index: 1000;
         box-shadow: -5px 0 25px rgba(0, 0, 0, 0.4);
+        border-radius: 20px 0 0 20px;
     }
     
     .navbar ul.active {
@@ -989,6 +582,7 @@ body {
         width: 260px;
         height: 100vh;
         background: linear-gradient(145deg, rgba(20, 25, 35, 0.98), rgba(30, 35, 45, 0.98));
+        backdrop-filter: blur(15px);
         flex-direction: column;
         align-items: center;
         justify-content: center;
@@ -996,6 +590,7 @@ body {
         transition: right 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
         z-index: 1000;
         box-shadow: -5px 0 25px rgba(0, 0, 0, 0.4);
+        border-radius: 20px 0 0 20px;
     }
     
     .navbar ul.active {
@@ -1069,8 +664,7 @@ body {
     }
     
     .home-img .img-box .img-item img {
-        top: 15px;
-        width: 80%;
+        width: 85%;
     }
 }
 
@@ -1136,6 +730,8 @@ body {
         flex-wrap: wrap;
         padding-top: 80px;
         gap: 30px;
+        min-height: auto;
+        padding-bottom: 50px;
     }
     
     .home-img .img-box {
@@ -1204,8 +800,6 @@ body.menu-open {
     overflow: hidden;
 }
 
- /*============= Hi, I'm Shagar chandro  animation section end  =========== */
+/*============= Hi, I'm Shagar chandro animation section end ===========*/
 
-    /* =================== Home section end ==============================  */
-
- 
+/* =================== Home section end ============================== */
