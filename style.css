@@ -3124,7 +3124,7 @@ body.menu-open {
 }
 
 /* ========== PREMIUM SEND BUTTON ========== */
-.btn {
+.btns {
     background: linear-gradient(105deg, #a8ff3a, #6bbf12);
     border: none;
     padding: 15px 28px;
@@ -3146,7 +3146,7 @@ body.menu-open {
     overflow: hidden;
 }
 
-.btn::before {
+.btns::before {
     content: '';
     position: absolute;
     top: 0;
@@ -3158,32 +3158,32 @@ body.menu-open {
     z-index: 0;
 }
 
-.btn:hover::before {
+.btns:hover::before {
     left: 0;
 }
 
-.btn:hover {
+.btns:hover {
     transform: translateY(-4px);
     box-shadow: 0 16px 35px rgba(173,255,47,0.45);
     gap: 16px;
 }
 
-.btn:active {
+.btns:active {
     transform: translateY(2px);
 }
 
-.btn i,
-.btn span {
+.btns i,
+.btns span {
     position: relative;
     z-index: 1;
 }
 
-.btn i {
+.btns i {
     font-size: 18px;
     transition: transform 0.3s ease;
 }
 
-.btn:hover i {
+.btns:hover i {
     transform: translateX(6px);
 }
 
@@ -3311,7 +3311,7 @@ body.menu-open {
         font-size: 30px;
     }
     
-    .btn {
+    .btns {
         padding: 13px 24px;
         font-size: 15px;
     }
@@ -3380,13 +3380,13 @@ body.menu-open {
         margin: 8px 0 10px 0;
     }
     
-    .btn {
+    .btns {
         padding: 12px 20px;
         font-size: 14px;
         margin-top: 22px;
     }
     
-    .btn i {
+    .btns i {
         font-size: 16px;
     }
     
@@ -3409,7 +3409,7 @@ body.menu-open {
         padding: 18px 14px;
     }
     
-    .btn {
+    .btns {
         padding: 11px 18px;
         font-size: 13px;
     }
