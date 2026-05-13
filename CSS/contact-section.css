@@ -119,7 +119,6 @@
     align-items: center;
     gap: 18px;
     background: rgba(15, 23, 42, 0.7);
-    
     padding: 20px 24px;
     border-radius: 28px;
     border: 1px solid rgba(173, 255, 47, 0.2);
@@ -176,7 +175,6 @@
     flex: 1.8;
     min-width: 280px;
     background: rgba(15, 23, 42, 0.6);
-
     padding: 35px 32px;
     border-radius: 32px;
     border: 1px solid rgba(173, 255, 47, 0.2);
@@ -273,68 +271,65 @@
     display: block;
 }
 
-/* ========== PREMIUM SEND BUTTON ========== */
+/* ========== HOME STYLE BUTTON FOR CONTACT SECTION ========== */
+/* This button matches exactly your home section button */
 .btns {
-    background: linear-gradient(105deg, #a8ff3a, #6bbf12);
-    border: none;
-    padding: 15px 28px;
+    display: inline-block;
+    padding: 12px 28px;
+    background: greenyellow;
+    border: 2px solid greenyellow;
+    border-radius: 40px;
+    box-shadow: 0 0 10px greenyellow;
+    color: #212630;
+    font-weight: 600;
+    font-size: clamp(14px, 2vw, 16px);
+    text-decoration: none;
+    transition: all 0.3s ease;
     cursor: pointer;
-    font-weight: 700;
-    border-radius: 60px;
-    font-size: 16px;
-    color: #0a0f1a;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.2);
+    text-align: center;
     width: 100%;
     margin-top: 28px;
-    letter-spacing: 0.5px;
-    box-shadow: 0 8px 22px rgba(173,255,47,0.3);
-    position: relative;
-    overflow: hidden;
-}
-
-.btns::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(105deg, #c4ff5e, #85d424);
-    transition: left 0.5s ease;
-    z-index: 0;
-}
-
-.btns:hover::before {
-    left: 0;
 }
 
 .btns:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 35px rgba(173,255,47,0.45);
-    gap: 16px;
+    background: transparent;
+    color: greenyellow;
+    box-shadow: none;
+    transform: translateY(-3px);
 }
 
 .btns:active {
-    transform: translateY(2px);
+    transform: translateY(1px);
 }
 
-.btns i,
-.btns span {
-    position: relative;
-    z-index: 1;
+/* Alternative class for backward compatibility */
+.btns {
+    display: inline-block;
+    padding: 12px 28px;
+    background: greenyellow;
+    border: 2px solid greenyellow;
+    border-radius: 40px;
+    box-shadow: 0 0 10px greenyellow;
+    color: #212630;
+    font-weight: 600;
+    font-size: clamp(14px, 2vw, 16px);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    margin-top: 28px;
 }
 
-.btns i {
-    font-size: 18px;
-    transition: transform 0.3s ease;
+.btns:hover {
+    background: transparent;
+    color: greenyellow;
+    box-shadow: none;
+    transform: translateY(-3px);
 }
 
-.btns:hover i {
-    transform: translateX(6px);
+.btns:active {
+    transform: translateY(1px);
 }
 
 /* success message */
@@ -462,7 +457,7 @@
     }
     
     .btns {
-        padding: 13px 24px;
+        padding: 12px 24px;
         font-size: 15px;
     }
 }
@@ -498,6 +493,11 @@
         padding: 12px 16px;
         font-size: 14px;
     }
+    
+   .btns {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
 }
 
 /* Mobile small (up to 480px) */
@@ -530,14 +530,10 @@
         margin: 8px 0 10px 0;
     }
     
-    .btns {
-        padding: 12px 20px;
+  .btns {
+        padding: 11px 18px;
         font-size: 14px;
         margin-top: 22px;
-    }
-    
-    .btns i {
-        font-size: 16px;
     }
     
     .info-box p {
@@ -560,7 +556,7 @@
     }
     
     .btns {
-        padding: 11px 18px;
+        padding: 10px 16px;
         font-size: 13px;
     }
     
@@ -610,52 +606,46 @@ html {
     width: 100%;
 }
 
-
-
-/* =================== address-anmation start  =================== */
-
-#address-anmation{
+/* =================== address-animation start =================== */
+#address-anmation {
     display: flex;
     align-items: center;
     gap: 20px;
     padding: 25px;
     margin-bottom: 20px;
-
     background: #0f172a;
     border-radius: 15px;
     border: 1px solid rgba(0,255,100,0.2);
-
     opacity: 0;
     transform: translateY(40px);
-    animation: fadeUp 0.8s ease forwards;
+    animation: fadeUpAddress 0.8s ease forwards;
 }
 
-/* delay */
-.contact-card:nth-child(1){ animation-delay: 0.2s; }
-.contact-card:nth-child(2){ animation-delay: 0.4s; }
-.contact-card:nth-child(3){ animation-delay: 0.6s; }
-
-@keyframes fadeUp{
-    to{
+@keyframes fadeUpAddress {
+    to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
+/* delay */
+.contact-card:nth-child(1) { animation-delay: 0.2s; }
+.contact-card:nth-child(2) { animation-delay: 0.4s; }
+.contact-card:nth-child(3) { animation-delay: 0.6s; }
+
 /* hover */
-#address-anmation:hover{
+#address-anmation:hover {
     transform: translateY(-5px) scale(1.02);
     box-shadow: 0 0 20px rgba(0,255,100,0.4);
     transition: 0.3s ease;
 }
 
 /* icon */
-.icon{
+.icon {
     font-size: 28px;
     color: #7CFF00;
 }
 
-/* ============ address-anmation end ==============  */
+/* ============ address-animation end ============== */
 
 /* ===================== contact section end ==================== */
-
