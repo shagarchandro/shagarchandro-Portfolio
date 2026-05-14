@@ -160,7 +160,7 @@ downloadBtn.addEventListener("click", () => {
 
     const text = downloadBtn.querySelector(".btn-text");
 
-    text.innerText = "Preparing CV...";
+    text.innerText = "Preparing Resume...";
 
     setTimeout(() => {
         text.innerText = "Downloading...";
@@ -172,7 +172,7 @@ downloadBtn.addEventListener("click", () => {
 
     setTimeout(() => {
         downloadBtn.classList.remove("downloading");
-        text.innerText = "Download CV";
+        text.innerText = "Download Resume";
       }, 5000);
       
     });
