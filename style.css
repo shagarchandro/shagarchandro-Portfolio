@@ -312,7 +312,7 @@ a{
 
     .navbar ul.active {
         max-width: 50vh;
-        max-height: 60vh;
+        max-height: 80vh;
         margin-top: 20px;
         right: 0;
         border-radius: 25px;
