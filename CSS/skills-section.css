@@ -1,274 +1,496 @@
 /* ================== skills section start ======================== */
 
-.skills{
-    padding:110px 8%;
-    background: radial-gradient(circle at top,#1f242d,#0b1220);
-    color:#fff;
-    overflow:hidden;
+.skills {
+    padding: 110px 8%;
+    background: radial-gradient(circle at top, #1f242d, #0b1220);
+    color: #fff;
+    overflow-x: hidden;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* ========================= HEADING (SMOOTH) ========================= */
 
-.skills-heading{
-    text-align:center;
-    margin-bottom:70px;
-
-    opacity:0;
-    transform:translateY(30px);
-    animation:fadeIn 1s ease forwards;
+.skills-heading {
+    text-align: center;
+    margin-bottom: 70px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeIn 1s ease forwards;
+    width: 100%;
 }
 
-.skills-heading h2{
-    font-size:clamp(26px,4vw,44px);
-    font-weight:800;
-    letter-spacing:1px;
+.skills-heading h2 {
+    font-size: clamp(26px, 4vw, 44px);
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin: 0;
+    padding: 0 10px;
 }
 
-.skills-heading h2 i{
-    color:greenyellow;
-    margin-right:10px;
-    animation:pulse 2.5s infinite ease-in-out;
+.skills-heading h2 i {
+    color: greenyellow;
+    margin-right: 10px;
+    animation: pulse 2.5s infinite ease-in-out;
 }
 
-.skills-heading p{
-    max-width:700px;
-    margin:auto;
-    margin-top:10px;
-
-    color:#b8b8b8;
-    font-size:clamp(14px,2vw,16px);
-    line-height:28px;
+.skills-heading p {
+    max-width: 700px;
+    margin: 15px auto 0;
+    padding: 0 15px;
+    color: #b8b8b8;
+    font-size: clamp(14px, 2vw, 16px);
+    line-height: 1.6;
+    text-align: center;
 }
 
-/* ========================= GRID (SMOOTH RESPONSIVE) ========================= */
+/* ========================= GRID (FULLY RESPONSIVE) ========================= */
 
-.skills-container{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:22px;
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* ========================= CARD (ULTRA SMOOTH) ========================= */
 
-.skill-box{
-    position:relative;
-    overflow:hidden;
-
-    background:rgba(255,255,255,0.03);
-
-    border-radius:20px;
-
-    padding:30px 18px;
-    text-align:center;
-
-    border:1px solid rgba(173,255,47,.12);
-
-    transition:transform .35s ease, box-shadow .35s ease;
-
-    opacity:0;
-    transform:translateY(50px);
-
-    animation:cardFade .8s ease forwards;
-    animation-delay:calc(.12s * var(--i));
+.skill-box {
+    position: relative;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+    padding: 30px 18px;
+    text-align: center;
+    border: 1px solid rgba(173, 255, 47, 0.12);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: cardFade 0.8s ease forwards;
+    animation-delay: calc(0.12s * var(--i));
+    box-sizing: border-box;
+    width: 100%;
 }
 
 /* neon border */
-.skill-box::before{
-    content:'';
-    position:absolute;
-    inset:0;
-
-    border-radius:20px;
-
-    background:linear-gradient(120deg,transparent,greenyellow,#00ffd5,transparent);
-
-    padding:1px;
-
-    -webkit-mask:
-        linear-gradient(#000 0 0) content-box,
-        linear-gradient(#000 0 0);
-
+.skill-box::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    background: linear-gradient(120deg, transparent, greenyellow, #00ffd5, transparent);
+    padding: 1.5px;
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
-
-    opacity:0;
-    transition:.4s ease;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
 }
 
-.skill-box:hover::before{
-    opacity:1;
+.skill-box:hover::before {
+    opacity: 1;
 }
 
 /* hover */
-.skill-box:hover{
-    transform:translateY(-10px) scale(1.03);
-    box-shadow:0 15px 35px rgba(173,255,47,.18);
+.skill-box:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(173, 255, 47, 0.18);
 }
 
 /* soft glow background */
-.skill-box::after{
-    content:'';
-    position:absolute;
-
-    width:180px;
-    height:180px;
-
-    background:rgba(173,255,47,.06);
-
-    border-radius:50%;
-
-    top:-80px;
-    right:-80px;
-
-    transition:.5s ease;
+.skill-box::after {
+    content: '';
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background: rgba(173, 255, 47, 0.06);
+    border-radius: 50%;
+    top: -80px;
+    right: -80px;
+    transition: transform 0.5s ease;
+    z-index: -1;
 }
 
-.skill-box:hover::after{
-    transform:scale(1.2);
+.skill-box:hover::after {
+    transform: scale(1.2);
 }
 
-/* =========================
-   ICON (SMOOTH)
-========================= */
+/* ========================= ICON (SMOOTH) ========================= */
 
-.skill-box i{
-    font-size:52px;
-    color:greenyellow;
-
-    margin-bottom:12px;
-
-    transition:transform .4s ease;
+.skill-box i {
+    font-size: 52px;
+    color: greenyellow;
+    margin-bottom: 15px;
+    transition: transform 0.4s ease;
+    display: inline-block;
 }
 
-.skill-box:hover i{
-    transform:scale(1.15) rotate(6deg);
+.skill-box:hover i {
+    transform: scale(1.15) rotate(6deg);
 }
 
-/* =========================
-   TEXT
-========================= */
+/* ========================= TEXT ========================= */
 
-.skill-box h3{
-    font-size:20px;
-    margin-bottom:6px;
+.skill-box h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+    font-weight: 600;
 }
 
-.skill-box span{
-    color:#cfcfcf;
-    font-size:14px;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:6px;
+.skill-box span {
+    color: #cfcfcf;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
 }
 
 /* ========================= MY SKILLS TEXT FIXED + SMOOTH ========================= */
 
-#my-skills{
-    position:relative;
-    display:inline-block;
-    color:#fff;
-    transition:.3s ease;
+#my-skills {
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    cursor: default;
 }
 
 /* underline */
-#my-skills::after{
-    content:"";
-    position:absolute;
-    left:0;
-    bottom:-6px;
-
-    width:0%;
-    height:2px;
-
-    background:linear-gradient(90deg,greenyellow,#00ffd5);
-
-    transition:width .4s ease;
-    border-radius:10px;
+#my-skills::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, greenyellow, #00ffd5);
+    transition: width 0.4s ease;
+    border-radius: 10px;
 }
 
-#my-skills:hover{
-    color:greenyellow;
-    text-shadow:0 0 10px rgba(173,255,47,.4);
+#my-skills:hover {
+    color: greenyellow;
+    text-shadow: 0 0 10px rgba(173, 255, 47, 0.4);
 }
 
-#my-skills:hover::after{
-    width:100%;
+#my-skills:hover::after {
+    width: 100%;
 }
 
-/* ========================= ANIMATIONS (SMOOTH)  ========================= */
+/* ========================= ANIMATIONS (SMOOTH) ========================= */
 
-@keyframes fadeIn{
-    from{
-        opacity:0;
-        transform:translateY(30px);
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
     }
-    to{
-        opacity:1;
-        transform:translateY(0);
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-@keyframes cardFade{
-    from{
-        opacity:0;
-        transform:translateY(50px) scale(.97);
+@keyframes cardFade {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.97);
     }
-    to{
-        opacity:1;
-        transform:translateY(0) scale(1);
-    }
-}
-
-@keyframes pulse{
-    0%,100%{transform:scale(1);}
-    50%{transform:scale(1.1);}
-}
-
-/* ========================= RESPONSIVE (CLEAN) ======================== */
-
-/* tablet */
-@media(max-width:992px){
-    .skills{
-        padding:90px 6%;
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
     }
 }
 
-/* mobile */
-@media(max-width:768px){
-    .skills{
-        padding:70px 5%;
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
     }
-
-    .skills-heading h2{
-        font-size:28px;
-    }
-
-    .skill-box{
-        padding:26px 16px;
-    }
-
-    .skill-box i{
-        font-size:46px;
+    50% {
+        transform: scale(1.1);
     }
 }
 
-/* small mobile */
-@media(max-width:480px){
-    .skills-heading h2{
-        font-size:24px;
-    }
+/* ========================= RESPONSIVE (FULLY RESPONSIVE FOR ALL DEVICES) ======================== */
 
-    .skill-box h3{
-        font-size:18px;
+/* Large Desktop (1200px - 4K) */
+@media (min-width: 1200px) and (max-width: 1600px) {
+    .skills {
+        padding: 110px 8%;
     }
-
-    .skill-box span{
-        font-size:13px;
+    
+    .skills-container {
+        gap: 25px;
     }
 }
- /* =====================my skills animation section end========================  */
 
+/* Desktop (992px - 1199px) */
+@media (max-width: 1199px) {
+    .skills {
+        padding: 100px 6%;
+    }
+    
+    .skills-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+    }
+}
 
- /* =============== skills end ================ */
+/* Laptop / Tablet (768px - 991px) */
+@media (max-width: 991px) {
+    .skills {
+        padding: 90px 5%;
+    }
+    
+    .skills-heading {
+        margin-bottom: 55px;
+    }
+    
+    .skills-heading h2 {
+        font-size: 32px;
+    }
+    
+    .skills-heading p {
+        font-size: 15px;
+        padding: 0 20px;
+    }
+    
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .skill-box {
+        padding: 28px 16px;
+    }
+    
+    .skill-box i {
+        font-size: 48px;
+    }
+    
+    .skill-box h3 {
+        font-size: 19px;
+    }
+}
+
+/* Tablet Small (576px - 767px) */
+@media (max-width: 767px) {
+    .skills {
+        padding: 80px 4%;
+    }
+    
+    .skills-heading {
+        margin-bottom: 45px;
+    }
+    
+    .skills-heading h2 {
+        font-size: 30px;
+    }
+    
+    .skills-heading p {
+        font-size: 14px;
+        line-height: 1.5;
+        padding: 0 15px;
+    }
+    
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+    
+    .skill-box {
+        padding: 25px 14px;
+    }
+    
+    .skill-box i {
+        font-size: 44px;
+        margin-bottom: 12px;
+    }
+    
+    .skill-box h3 {
+        font-size: 18px;
+    }
+    
+    .skill-box span {
+        font-size: 13px;
+    }
+}
+
+/* Mobile Large (480px - 575px) */
+@media (max-width: 575px) {
+    .skills {
+        padding: 70px 20px;
+    }
+    
+    .skills-heading {
+        margin-bottom: 40px;
+    }
+    
+    .skills-heading h2 {
+        font-size: 28px;
+    }
+    
+    .skills-heading p {
+        font-size: 13px;
+        padding: 0 10px;
+    }
+    
+    .skills-container {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .skill-box {
+        padding: 22px 18px;
+        max-width: 100%;
+    }
+    
+    .skill-box i {
+        font-size: 46px;
+        margin-bottom: 12px;
+    }
+    
+    .skill-box h3 {
+        font-size: 19px;
+    }
+    
+    .skill-box span {
+        font-size: 14px;
+    }
+}
+
+/* Mobile Medium (400px - 479px) */
+@media (max-width: 479px) {
+    .skills {
+        padding: 60px 15px;
+    }
+    
+    .skills-heading h2 {
+        font-size: 26px;
+    }
+    
+    .skills-heading p {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+    
+    .skills-container {
+        gap: 14px;
+        max-width: 350px;
+    }
+    
+    .skill-box {
+        padding: 20px 15px;
+    }
+    
+    .skill-box i {
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+    
+    .skill-box h3 {
+        font-size: 17px;
+        margin-bottom: 6px;
+    }
+    
+    .skill-box span {
+        font-size: 12px;
+        gap: 5px;
+    }
+}
+
+/* Mobile Small (360px - 399px) */
+@media (max-width: 399px) {
+    .skills {
+        padding: 50px 12px;
+    }
+    
+    .skills-heading h2 {
+        font-size: 24px;
+    }
+    
+    .skills-heading p {
+        font-size: 11px;
+        padding: 0 5px;
+    }
+    
+    .skills-container {
+        gap: 12px;
+        max-width: 100%;
+    }
+    
+    .skill-box {
+        padding: 18px 12px;
+    }
+    
+    .skill-box i {
+        font-size: 36px;
+        margin-bottom: 8px;
+    }
+    
+    .skill-box h3 {
+        font-size: 16px;
+    }
+    
+    .skill-box span {
+        font-size: 11px;
+    }
+}
+
+/* Very Small Devices (320px - 359px) */
+@media (max-width: 359px) {
+    .skills {
+        padding: 40px 10px;
+    }
+    
+    .skills-heading h2 {
+        font-size: 22px;
+    }
+    
+    .skills-heading p {
+        font-size: 11px;
+        line-height: 1.4;
+    }
+    
+    .skill-box {
+        padding: 16px 10px;
+    }
+    
+    .skill-box i {
+        font-size: 32px;
+    }
+    
+    .skill-box h3 {
+        font-size: 15px;
+    }
+    
+    .skill-box span {
+        font-size: 11px;
+    }
+}
+
+/* Prevent horizontal scroll on all devices */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Safari/iOS fix */
+.skill-box {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+/* =====================my skills animation section end======================== */
+
+/* =============== skills end ================ */

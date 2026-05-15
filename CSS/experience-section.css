@@ -1,3 +1,5 @@
+/* experience section start  */
+
 /* ================== BASE STYLES (Matching Home Section) ================= */
 * {
     margin: 0;
@@ -797,3 +799,5 @@ body {
 .section-header h2 {
     animation: titleGlow 3s ease-in-out infinite;
 }
+
+/* experience section end  */
