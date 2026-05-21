@@ -192,7 +192,6 @@ body {
     overflow: hidden;
     z-index: 1;
     background: transparent;
-    backdrop-filter: blur(4px);
 }
 
 /* Individual platform premium hover effects */
