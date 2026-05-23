@@ -262,3 +262,18 @@ setInterval(()=>{
 
 /* ============= about picture-gellary java script End ==================  */
 
+(function() {
+    // ===== PAGE LOADER FUNCTIONALITY ONLY =====
+    const loader = document.getElementById('pageLoader');
+    if (loader) {
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                loader.style.opacity = '0';
+                loader.style.visibility = 'hidden';
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                }, 500);
+            }, 1000); // Loader visible for 1.5 seconds
+        });
+    }
+})();
